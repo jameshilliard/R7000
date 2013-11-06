@@ -1,0 +1,6 @@
+Read the BUGS/ERRATA file, then read the INSTALL file.
+
+Quick Build Instructions:
+        cd src
+        make CDEBUGFLAGS=-DDEBUG CC_PARAMS=-g
+        make install

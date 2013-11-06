@@ -1,0 +1,452 @@
+#!/usr/bin/perl -w
+
+
+$ident="\$RCSfile:\$ \$Revision:\$ \$Date:\$";
+$right="Copyright (c) 2000, Douglas R. Jerome.";
+
+
+# ******************************************************************************
+#
+# hackerlabs:  man page ripper
+#
+#	----------------------------------------------------------------
+#
+# Copyright (c) 2000, 2001 Douglas R. Jerome, Peoria, AZ USA
+#
+#	This program is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with this program; if not, write to the Free Software
+#	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+#	----------------------------------------------------------------
+#
+# FILE NAME
+#
+#	$RCSfile:$
+#	$Revision:$
+#	$Date:$
+#
+# PROGRAM INFORMATION
+#
+#	Developed by:	hackerlabs project
+#	Developer:	Douglas R. Jerome, drj, <jerome@primenet.com>
+#
+# FILE DESCRIPTION
+#
+#	[ FIXME ]
+#
+#	exit error codes:
+#
+#		0 - All OK, I hope.
+#		1 - No rip or coalesce file.
+#		2 - Both rip and coalesce file.
+#		3 - No directory.
+#		4 - Can't open file to rip.
+#		5 - Can't open rip output file.
+#		6 - Can't open file to coalesce.
+#
+# CHANGE LOG
+#
+#	27jun01	drj	Created several verbose levels.
+#
+#	13apr00	drj	File generation.
+#
+# ******************************************************************************
+
+
+# *****************************************************************************
+# Library usage.
+# *****************************************************************************
+
+# -- perl/lib
+#
+require "assert.pl";
+require "getopts.pl";
+
+# -- local lib
+#
+#  (None.)
+
+
+# *****************************************************************************
+# Set Some Operational Characteristics
+# *****************************************************************************
+
+select STDOUT;	# Set the default file handle for output operations.
+
+$| = 1;		# Flush output for every print or write, instead of the
+		# default of flushing output on end-of-line.
+
+
+# *****************************************************************************
+# Setup some global variables.
+# *****************************************************************************
+
+# -- Miscellaneous constant values:
+#
+$RIPPER_ERR  = "ripper.pl-ERROR: ";
+$RIPPER_WARN = "ripper.pl-WARNING: ";
+$RIPPER_INFO = "ripper.pl-INFO: ";
+
+# -- Main program variables:
+#
+$date   = `date`;
+# $scalar = "";
+# %array  = ();
+
+# These global variables are not really variables, they're file handles; their
+# usage is documented here.
+#
+#	SOURCE	This is a file handle used to read [FIXME}
+#
+#	DEST	This is a file handle used to write [FIXME}
+#
+#	RIP	This is a file handle used to write [FIXME}
+
+
+# *****************************************************************************
+# Local subroutines.
+# *****************************************************************************
+
+# -------------------------------------------------------------------------
+# Subroutine errorPrint (print a snappy error message)
+# -------------------------------------------------------------------------
+
+sub   errorPrint
+   {
+   local ($arg) = @_;
+   print "$RIPPER_ERR $arg.\n";
+   1;
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine warnPrint (for consistent message format)
+# -------------------------------------------------------------------------
+
+sub   warnPrint
+   {
+   local ($arg) = @_;
+   print "$RIPPER_WARN $arg.\n";
+   1;
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine infoPrint (for consistent message format)
+# -------------------------------------------------------------------------
+
+sub   infoPrint
+   {
+   local ($arg) = @_;
+   print "$RIPPER_INFO $arg.\n";
+   1;
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine usage
+# -------------------------------------------------------------------------
+
+sub   usage
+   {
+   print "\n";
+   print "usage:  mrip  [ -v ]  -r <file>  -d <dir>  -k <keyword>\n";
+   print "        mrip  [ -v ]  -c <file>  -d <dir>  -k <keyword>\n";
+   print "\n";
+   print " \t-v             verbose mode\n";
+   print " \t-d <dir>       directory to rip/coalesce to/from\n";
+   print " \t-r <file>      rip from <file>\n";
+   print " \t-c <file>      coalesce to <file>\n";
+   print " \t-k <keyword>   SUBSYSTEM or SUBROUTINE\n";
+   print "\n";
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine cpState
+# -------------------------------------------------------------------------
+
+sub   cpState
+   {
+   local ($opt_v, $opt_d, $opt_k, $unused, $_) = @_;
+   local ($nextState, $name);
+   $nextState = "cpState";
+   $name = $unused;
+   if (/^<$opt_k NAME=\"(\w+)\">/o)
+      {
+      $name = $1;
+      $nextState = "nameState";
+      }
+   else
+      {
+      print DEST $_;
+      }
+   $nextState, $name;
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine nameState
+# -------------------------------------------------------------------------
+
+sub   nameState
+   {
+   local ($opt_v, $opt_d, $opt_k, $n, $_) = @_;
+   if ($opt_v eq "")  { print "."; }
+   else { if ($opt_v eq "1") { print "\t$n\n"; }
+   else { if ($opt_v eq "2") { print "<$opt_k NAME=\"$n\">\n"; } } }
+   print DEST "<INSERT NAME=\"$n\">\n";
+   if ($opt_k eq "SUBROUTINE")
+      {
+      open RIP, ">$opt_d/$n.3" or &errorPrint ("can't open $opt_d/$n.3 rip");
+      print RIP "$n(3)\n";
+      }
+   else
+      {
+      if ($opt_k eq "SUBSYSTEM")
+         {
+         open RIP, ">$opt_d/$n.l" or &errorPrint ("can't open $opt_d/$n.l rip");
+         print RIP "$n(l)\n";
+         }
+      else
+         {
+         open RIP, ">$opt_d/$n.x" or &errorPrint ("can't open $opt_d/$n.x rip");
+         print RIP "$n(x)\n";
+         }
+      }
+   print RIP "$_";
+   "ripState", "";
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine ripState
+# -------------------------------------------------------------------------
+
+sub   ripState
+   {
+   local ($opt_v, $opt_d, $opt_k, $name, $_) = @_;
+   local ($nextState);
+   $nextState = "ripState";
+   if (/^<\/$opt_k>/o)
+      {
+      $nextState = "cpState";
+      close RIP;
+      }
+   else
+      {
+      print RIP $_;
+      }
+   $nextState, "";
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine ripMe
+# -------------------------------------------------------------------------
+
+sub   ripMe
+   {
+   local ($opt_v, $opt_r, $opt_d, $opt_k) = @_;
+   local ($name) = "";
+   $stateFunc = "cpState";
+   if (open SOURCE, "<$opt_r")
+      {
+      if (open DEST, ">$opt_r.rip")
+         {
+         while (<SOURCE>)
+            {
+$cmd = "(\$stateFunc,\$name)=&$stateFunc(\$opt_v,\$opt_d,\$opt_k,\$name,\$_);";
+eval $cmd;
+            }
+         print "\n" if ($opt_v eq "");
+         close DEST;
+         }
+      else
+         {
+         &errorPrint ("can't open \"$opt_r.rip\" for ripping");
+         exit 5;
+         }
+      close SOURCE;
+      }
+   else
+      {
+      &errorPrint ("can't open \"$opt_r\" for ripping");
+      exit 4;
+      }
+   1;
+   }
+
+# -------------------------------------------------------------------------
+# Subroutine beatMe
+# -------------------------------------------------------------------------
+
+sub   beatMe
+   {
+   local ($opt_v, $opt_c, $opt_d, $opt_k) = @_;
+   local ($name) = "";
+
+   if (open SOURCE, "<$opt_c")
+      {
+      if (open DEST, ">$opt_c.coal")
+         {
+         while (<SOURCE>)
+            {
+            if (/^<INSERT NAME=\"(\w+)\">/o)
+               {
+               $name = $1;
+               if ($opt_k eq "SUBROUTINE")
+                  {
+                  if (! open RIP, "<$opt_d/$name.3")
+                     { $name = ""; }
+                  }
+               else
+                  {
+                  if ($opt_k eq "SUBSYSTEM")
+                     {
+                     if (! open RIP, "<$opt_d/$name.l")
+                        { $name = ""; }
+                     }
+                  else
+                     { $name = ""; }
+                  }
+               if ($name ne "")
+                  {
+                  print DEST "<$opt_k NAME=\"$name\">\n";
+                  <RIP>; # Throw away the first line.
+                  while (<RIP>)
+                     { print DEST; }
+                  close RIP;
+                  print DEST "<\/$opt_k>\n";
+                  }
+               else
+                  {
+                  print DEST;
+                  }
+               }
+            else
+               {
+               print DEST;
+               }
+            }
+         close DEST;
+         }
+      else
+         {
+         &errorPrint ("can't open \"$opt_c.coal\" coalescing");
+         exit 5;
+         }
+      close SOURCE;
+      }
+   else
+      {
+      &errorPrint ("can't open \"$opt_c\" for coalescing");
+      exit 6;
+      }
+
+   1;
+   }
+
+
+# *****************************************************************************
+# Main program.
+# *****************************************************************************
+
+# -- Environment Variables
+#
+# $myEnvVar = $ENV{'MY_ENV_VAR'};	# Location of scripts & tools.
+# $myEnvVar = "." if ! $myEnvVar;	# Current directory, if not defined.
+# if (! $myEnvVar)
+#   { print "$0-WARNING:  no environment variable.\n"; }
+
+# -- Command Line Switches
+#
+# There are some possible arguments to this perl script.  These arguments are
+# NOT expected to be in order, and can be repeated!  The positional description
+# below is recomended.
+#
+# $ARGV[0]     -v                                              (set verbose)
+#       This argument is the "verbose mode".  This perl script will generate
+#       extra output that is (hopefully) usefull for the user.
+#
+# $ARGV[1]     -c
+#       This argument is
+#
+# $ARGV[1]     -d
+#       This argument is
+#
+# $ARGV[1]     -r
+#       This argument is
+#
+# $ARGV[1]     -k
+#       This argument is
+#
+&Getopts ('v:c:d:k:r:');
+ print "No opt_v.\n" if ! defined $opt_v;
+ print "opt_v = $opt_v.\n" if defined $opt_v;
+ print "No opt_c.\n" if ! defined $opt_c;
+ print "opt_c = $opt_c.\n" if defined $opt_c;
+ print "No opt_d.\n" if ! defined $opt_d;
+ print "opt_d = $opt_d.\n" if defined $opt_d;
+ print "No opt_k.\n" if ! defined $opt_k;
+ print "opt_k = $opt_k.\n" if defined $opt_k;
+ print "No opt_r.\n" if ! defined $opt_r;
+ print "opt_r = $opt_r.\n" if defined $opt_r;
+$opt_v = "" unless defined $opt_v && $opt_v ne "";
+$opt_c = "" unless defined $opt_c && $opt_c ne "";
+$opt_d = "" unless defined $opt_d && $opt_d ne "";
+$opt_r = "" unless defined $opt_r && $opt_r ne "";
+$opt_k = "" unless defined $opt_k && $opt_k ne "";
+
+# -- Identify ourself if we are verbose.
+#
+print "\n$date\n$ident\n$right\n\n" if $opt_v eq "2";
+
+# -- Sanity Checkup
+#
+if (($opt_c eq "") && ($opt_r eq ""))
+   {
+   &errorPrint ("no rip/coalesce file");
+   &usage();
+   &infoPrint ("finished executing") if $opt_v eq "2";
+   exit 1;
+   }
+if (($opt_c ne "") && ($opt_r ne ""))
+   {
+   &errorPrint ("can't do both rip and coalesce");
+   &usage();
+   &infoPrint ("finished executing") if $opt_v eq "2";
+   exit 2;
+   }
+if (($opt_d eq "") || (! -d $opt_d) || (! -x $opt_d))
+   {
+   &errorPrint ("no directory (or wrong permissions) $opt_d");
+   &usage();
+   &infoPrint ("finished executing") if $opt_v eq "2";
+   exit 3;
+   }
+
+# -- Rip
+#
+if (($opt_c eq "") && ($opt_r ne ""))
+   {
+   &ripMe ($opt_v, $opt_r, $opt_d, $opt_k);
+   }
+
+# -- Coalesce
+#
+if (($opt_c ne "") && ($opt_r eq ""))
+   {
+   &beatMe ($opt_v, $opt_c, $opt_d, $opt_k);
+   }
+
+
+# *****************************************************************************
+# Exit OK.
+# *****************************************************************************
+
+&infoPrint ("finished executing") if $opt_v eq "2";
+exit 0;

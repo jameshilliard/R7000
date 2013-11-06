@@ -1,0 +1,151 @@
+HOST=arm-linux
+SRC_PATH=$(shell pwd)
+HOST_COMPILE=$(HOST)-
+TOOL_CHAIN_PATH=$(TOOLCHAIN)
+
+PKG_CONFIG_PATH=$(SRC_PATH)/build/usr/lib/pkgconfig
+export PKG_CONFIG_PATH
+PKG_CONFIG_LIBDIR=$(SRC_PATH)/build/usr/lib/pkgconfig
+export PKG_CONFIG_LIBDIR
+PKG_INSTall_DIR =$(SRC_PATH)/build
+DESTDIR = $(PKG_INSTall_DIR)
+export DESTDIR
+LDFLAGS += -L$(SRC_PATH)/build/usr/lib
+CFLAGS += -I$(SRC_PATH)/build/usr/include
+CPPFLAGS += -I$(SRC_PATH)/build/usr/include
+
+export LDFLAGS
+export CFLAGS
+export CPPFLAGS
+PATH := $(PKG_INSTALL_DIR)/usr/lib:$(PATH)
+export PATH
+
+all:
+#	cd zlib-1.2.7;\
+	make && make install
+#	./configure --prefix=/usr;\
+	make && make install
+#	cd confuse-2.7; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd libiconv-1.10; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd tre-0.8.0;\
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd libgpg-error-1.10; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd gperf-3.0.4; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd sqlite-3.6.22; \
+	make CFLAGS="-DSQLITE_ENABLE_UNLOCK_NOTIFY";\
+	 --includedir=$(DESTDIR) --libdir=$(DESTDImake install
+#	./configure --host=$(HOST) CFLAGS=-Os --enable-threadsafe --prefix=/usr;\
+	make CFLAGS="-DSQLITE_ENABLE_UNLOCK_NOTIFY";\
+	make install
+# tab, libgcrypt/configure modified ,hardcode /src/Makefile , make error
+#	cd libgcrypt-1.5.0; \
+	make && make install
+#	./configure --host=$(HOST) with_gpg_error_prefix=$(SRC_PATH)/build/usr --prefix=/usr;\
+	make && make install
+#tab, mxml Makefile moddified
+#	cd mxml-2.7; \
+	make && make install-libmxml.so.1.5
+#	./configure --host=$(HOST) --prefix=/usr ;\
+#	make
+#	cd libevent-1.4.14b-stable;\
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make;\
+	make install
+#	cd avl-0.3.5;\
+	make && make install
+#	cd libunistring-0.9.3; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr --with-libiconv-prefix=$(SRC_PATH)/build/usr ;\
+	make && make install
+#	cd alsa-lib-1.0.26; \
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr \
+	--disable-rawmidi \
+	--disable-alisp \
+	--disable-old-symbols \
+	--disable-python \
+	--disable-ucm ;\
+	make && make install
+#	cd libav-0.5.9 ;\
+	./configure --enable-shared --enable-cross-compile  --arch=arm --cross-prefix=arm-brcm-linux-uclibcgnueabi- --prefix=/usr --enable-pthreads  \
+	--disable-debug \
+	--disable-indevs \
+	--diswsable-outdevs \
+	--enable-swscale \
+	--extra-cflags=-fPIC;\
+	make && make install
+#	cd libdaemon-0.14;\
+	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+	#	./configure --host=$(HOST) --prefix=/usr
+#	cd expat-2.0.1;\
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd gdbm-1.8.3;\
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+	make && make install
+#	cd dbus-1.6.8;\
+ 	make && make install
+#	./configure --host=$(HOST) --prefix=/usr;\
+ 	make && make install
+#	cd avahi-0.6.25;\
+	make && make install
+#	./configure --host=$(HOST) --prefix=/usr  \
+	--disable-nls --enable-shared --enable-static --disable-glib --disable-gobject --disable-qt3 --disable-qt4 --disable-gtk --with-xml=expat --disable-dbm --enable-gdbm --enable-libdaemon --disable-python --disable-pygtk --disable-python-dbus --disable-mono --disable-monodoc --disable-doxygen-doc --disable-doxygen-dot --disable-doxygen-man --disable-doxygen-rtf --disable-doxygen-xml --disable-doxygen-chm --disable-doxygen-chi --disable-doxygen-html --disable-doxygen-ps --disable-doxygen-pdf --disable-xmltoman --with-distro=none --with-avahi-user=root --with-avahi-group=root --with-autoipd-user=root --with-autoipd-group=root --disable-stack-protector ;\
+	make && make install
+	cd forked-daapd-0.19;\
+	make && make install
+#	./configure --host=$(HOST) \
+	--prefix=/usr \
+	AVAHI_CFLAGS=$(SRC_PATH)/build/usr/include \
+	AVAHI_LIBS=$(SRC_PATH)/build/usr/lib \
+	LIBAV_CFLAGS=$(SRC_PATH)/build/usr/include \
+	LIBAV_LIBS=$(SRC_PATH)/build/usr/lib \
+	SQLITE3_CFLAGS=$(SRC_PATH)/build/usr/include \
+	SQLITE3_LIBS=$(SRC_PATH)/build/usr/lib \
+	MINIXML_CFLAGS=$(SRC_PATH)/build/usr/include \
+	MINIXML_LIBS=$(SRC_P/ATH)/build/usr/lib \
+        --with-libgcrypt-prefix=$(SRC_PATH)/build/usr \
+	--with-gpg-error-prefix=$(SRC_PATH)/build/usr ;\
+	make && make install
+	touch .conf
+make_iserver:
+#ifeq ($(PROFILE),WNDR3400)
+	cp config_WNDR3400.h source/include/config.h
+#endif
+	cd source ; make
+
+clean: 
+
+	
+cleansmb: 
+	
+
+distclean:
+	rm -rf .conf
+	cd source ; make distclean
+
+install:
+#	install -m 755 $(SRC_PATH)/build/lib/lib* $(TARGETDIR)/lib/
+#	install -m 755 $(SRC_PATH)/build/sbin/forked-daapd $(TARGETDIR)/sbin/
+
+
+
+		

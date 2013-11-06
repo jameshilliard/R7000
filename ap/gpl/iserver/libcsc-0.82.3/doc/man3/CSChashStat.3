@@ -1,0 +1,77 @@
+CSChashStat(3)
+
+NAME
+        CSChashStat - query statistics of a libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSChashStat (
+                          CSChashTableType   const hashTable,
+                          CSChashStatType*   const statStruct
+                          );
+
+RETURN VALUE
+        CSChashStat(), if successful, returns a pointer to a structure of
+        queried data, or NULL if otherwise not successful.
+        CSChashStat(), returns CSC_OK, or CSC_BADARG and CSC_CORRUPT can be
+        returned corresponding to NULL pointers, bad function arguments, and
+        internal data errors, respectively.
+
+DESCRIPTION
+        CSChashStat() queries the libcsc hash table represented by the opaque
+        `hashTable' and fills a CSChashStatType structure.  The CSChashStatType
+        structure is
+
+                typedef struct   CSChashStatType
+                   {
+                   char            name[80];   // name of hash table
+                   CSCprofileType  profiling;  // profiling flag
+                   size_t          count;      // count of items in table
+                   size_t          nhash;      // number of hash locations
+                   CSCboolean      grows;      // CSC_TRUE or CSC_FALSE
+                   size_t          resizes;    // num of resizes, if table grows
+                   size_t          deletions;  // num of deletions since resize
+                   size_t          insertions; // num of insertions since resize
+                   size_t          collisions; // num of collisions since resize
+                   } CSChashStatType;
+
+        Only up to seventy nine characters of the table name are retrieved.
+
+        If the table size was specified a zero when it was created with
+        CSChashNew() then the table quadruples its hash locations as it gets
+        full.  In this case the grows flag will be CSC_TRUE, otherwise it will
+        be CSC_FALSE.
+
+        If the table grows, then the deletions, insertions, and collisions
+        fields of the CSChashStatType structure will represent those
+        statistics only since the last time the table resized itself i.e., the
+        deletions, insertions, and collisions are reset to zero when the table
+        resizes itself.
+
+EXAMPLE
+        CSChashTableType   myTable;
+        CSChashQueryType   statStruct;
+        int                stat
+
+           .
+           .
+           .
+        stat = CSChashStat (myTable, &statStruct);
+           .
+           // do something with the statistics
+           .
+           .
+           .
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashEntryPut(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashEntryStat(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

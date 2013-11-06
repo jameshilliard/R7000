@@ -1,0 +1,62 @@
+# PPP top-level Makefile for Linux.
+.NOTPARALLEL:
+
+BINDIR = $(DESTDIR)/usr/sbin
+MANDIR = $(DESTDIR)/usr/man
+ETCDIR = $(DESTDIR)/etc/ppp
+
+DIRS := chat pppd/plugins pppd pppstats pppdump
+
+# uid 0 = root
+INSTALL= install
+
+.PHONY: all
+all  : ${DIRS}
+
+.PHONY: ${DIRS}
+pppd : pppd/plugins
+
+${DIRS}:
+	+$(MAKE) -C $@ ${MFLAGS} all
+
+.PHONY: install
+install: $(BINDIR) $(MANDIR)/man8 install-progs install-etcppp
+
+.PHONY: install-progs 
+install-progs: install-chat install-pppd/plugins install-pppd install-pppstats install-pppdump
+
+.PHONY: install-etcppp
+install-etcppp: $(ETCDIR) $(ETCDIR)/options $(ETCDIR)/pap-secrets \
+	$(ETCDIR)/chap-secrets
+
+install-% :
+	+$(MAKE) -C $(patsubst install-%,%,$@) BINDIR=${BINDIR} MANDIR=${MANDIR} ${MFLAGS} install
+
+$(ETCDIR)/options:
+	$(INSTALL) -c -m 644 etc.ppp/options $@
+$(ETCDIR)/pap-secrets:
+	$(INSTALL) -c -m 600 etc.ppp/pap-secrets $@
+$(ETCDIR)/chap-secrets:
+	$(INSTALL) -c -m 600 etc.ppp/chap-secrets $@
+
+$(BINDIR):
+	$(INSTALL) -d -m 755 $@
+$(MANDIR)/man8:
+	$(INSTALL) -d -m 755 $@
+$(ETCDIR):
+	$(INSTALL) -d -m 755 $@
+
+.PHONY: clean dist-clean
+clean: $(addprefix clean-,${DIRS})
+	rm -f `find . -name '*.[oas]' -print`
+	rm -f `find . -name 'core' -print`
+	rm -f `find . -name '*~' -print`
+
+clean-% :
+	+$(MAKE) -C $(patsubst clean-%,%,$@) clean
+
+dist-clean:	clean
+	rm -f Makefile `find . -name Makefile -print`
+
+#kernel:
+#	cd linux; ./kinstall.sh

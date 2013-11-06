@@ -1,0 +1,61 @@
+CSCsockConnectUDP(3)
+
+NAME
+        CSCsockConnectUDP - initiate a socket connection
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsockConnectUDP (
+                                      int*           const socketPtr,
+                                const char*                host,
+                                const char*                service,
+                                      CSCgenFnType         errorCallback
+                                );
+
+RETURN VALUE
+        CSC_OK .......... successful, and the integer pointed to by socketPtr
+                          will be updated with the new socket descriptor
+
+        CSC_NOTFOUND .... can't make sense of host
+
+        CSC_NOSVC ....... can't make sense of service
+
+        CSC_NOPROT ...... can't make any sense out of the UDP protocol
+
+        CSC_NOSOCK ...... can't allocate a new socket or can't set a socket
+                          option
+
+        CSC_BADARG ...... socketPtr or service is NULL or connectCount is zero
+
+DESCRIPTION
+        CSCsockConnectUDP() attempts to create a PF_INET (IPv4) protocol
+        socket and make a UDP (SOCK_DGRAM) connection to another socket.
+
+        The other socket to which to connect is expected to be on `host' and
+        `service', where `host' is the hostname or IP address, and `service' is
+        the service or port number. If `service' specifies port number, then the
+        integer value must fit in an unsigned 16 bit variable
+        (0 <= sevice <= 65535). For example:
+
+                host            service
+                ----            -------
+                "batman"        "telnet"
+                "spidergirl"    "5200"
+                "198.168.0.2"   "finger"
+                "198.168.0.2"   "5200"
+
+        Error conditions are announced via `errorCallback', if it is not NULL.
+        The `errorCallback' function is called with the CSCsockConnectUDP()
+        return value, errno, and a string describing the error e.g.,
+
+                (*errorCallback) (CSC_NOSOCK, errno, "can't create socket");
+
+BUGS
+        There's no "connection" in UDP! CSCsockConnectUDP() probably shouldn't
+        call connect() to make a connection.
+
+SEE ALSO
+        CSCsockConnectTCP(3)
+        CSCsockPassiveTCP(3)
+        CSCsockPassiveUDP(3)

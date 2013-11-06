@@ -1,0 +1,53 @@
+CSCnotificationPost(3)
+
+NAME
+	CSCnotificationPost - post to a notification in a board
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCnotificationPost (
+                                        CSCnotificationBoardType   const board,
+                                  const char*                            name
+                                  );
+
+RETURN VALUE
+        CSCnotificationPost(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCnotificationPost() dispatches all client functions registered for
+        particular notification `name' in notification `board'.
+
+        As the dispatched client functions are called they should return
+        CSC_OK or CSC_NOTOUND.  If CSC_NOTFOUND is returned by a client
+        function, then no more client functions registered for the notification
+        are called for the particular notification action and and the
+        notification's error function, pointed to by errfn, is called.  The
+        error function, pointed to by errfn, is associated with the
+        notification entry when the notification entry is created.  The error
+        function's return value is ignored.
+
+        The client functions are called in the order of their priority, which
+        they specify with the tag value when they register.
+
+        Client functions are libcsc CSCgenFnType types; their prototype is:
+
+                int    (*CSCgenFnType) (int, int, void*);
+
+        The client functions are called with a notification count,
+        client-specified integer tag (used as the priority specifying the order
+        in which the client functions are called), and client-specified data
+        (with which they register):
+
+                (*fn) (count, tag, data);
+
+SEE ALSO
+        CSCnotificationBoardNew(3)
+        CSCnotificationBoardDel(3)
+        CSCnotificationBoardPrint(3)
+        CSCnotificationNew(3)
+        CSCnotificationDel(3)
+        CSCnotificationRegister(3)

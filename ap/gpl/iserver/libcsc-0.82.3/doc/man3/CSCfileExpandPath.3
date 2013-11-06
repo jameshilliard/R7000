@@ -1,0 +1,30 @@
+CSCfileExpandPath(3)
+
+NAME
+        CSCfileExpandPath - expand ~ and environment variables in pathname
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   cscFileExpandPath (
+                                  const char*            const path,
+                                  const size_t                 pathMax,
+                                        CSCmemListType   const memList,
+                                        int                    memTag
+                                  );
+
+RETURN VALUE
+        CSCfileExpandPath() returns a pointer to a newly allocated string, if
+        successful; otherwise, it returns NULL on failure.
+
+DESCRIPTION
+        CSCfileExpandPath() expands the `~' character and environment variables
+        in the string in the path argument. The new expanded string must be a
+        length less than or equal to pathMax, including the terminating NULL
+        character.
+
+        If successful, cscFileExpandPath() returns a pointer to a new string
+        that is allocated by rtsMemAlloc(); the string must be freed with
+        CSCmemFree() to avoid a memory leak.
+
+SEE ALSO

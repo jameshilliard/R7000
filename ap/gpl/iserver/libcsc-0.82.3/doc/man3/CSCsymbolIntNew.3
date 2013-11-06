@@ -1,0 +1,48 @@
+CSCsymbolIntNew(3)
+
+NAME
+        CSCsymbolIntNew - allocate and initialize a integer symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCsymbolType*   CSCsymbolIntNew (
+                                         const char*            const symName,
+                                               long                   symType,
+                                               int                    symVal,
+                                               CSCmemListType   const memList,
+                                               int                    memTag
+                                         );
+
+RETURN VALUE
+        CSCsymbolIntNew() returns a pointer to the newly allocated symbol, if
+        successful; otherwise, NULL is returned.
+
+DESCRIPTION
+        CSCsymbolIntNew() dynamically allocates a new symbol structure and
+        fills it in with `symName', `symType', and `symVal'. Client code
+        probably should use the same `symType' value for all integer symbols,
+        and `symName' probably should be the ASCII string equivalent of
+        `symVal'.
+
+HINTS
+        Memory for the new symbol's name is allocated and `symName' is copied
+        in to it, so client code can immediately free `symName' upon returning
+        from CSCsymbolIntNew().
+
+        The symbol's valueFlag field is set to 1.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

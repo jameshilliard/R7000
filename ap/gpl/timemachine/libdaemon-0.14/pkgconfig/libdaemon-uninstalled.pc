@@ -1,0 +1,8 @@
+libdir=/home/eric/U12H189_WNDR4500/TimeMachine/2011_04_14_WNDR4500_Alpha/ap/gpl/timemachine/libdaemon-0.14/libdaemon/.libs
+includedir=/home/eric/U12H189_WNDR4500/TimeMachine/2011_04_14_WNDR4500_Alpha/ap/gpl/timemachine/libdaemon-0.14
+
+Name: libdaemon
+Description: a lightweight C library that eases the writing of UNIX daemons
+Version: 0.14
+Libs: -L${libdir} -R${libdir} -ldaemon
+Cflags: -D_REENTRANT -I${includedir}

@@ -1,0 +1,75 @@
+CSCmemAlloc(3)
+
+NAME
+        CSCmemAlloc - allocate memory (and keep thrack of it in memList)
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemAlloc (
+                          CSCmemListType   const memList,
+                          void**           const memPtrPtr,
+                          size_t                 itemCount,
+                          size_t                 itemSize,
+                          int                    tagData
+                          );
+
+RETURN VALUE
+        CSC_OK ......... successful
+
+        RTS_NOMEM ...... if no memory can be dynamically allocated
+
+        CSC_BADARG ..... memList or memPtrPtr is NULL or itemCount or itemSize
+                         is zero
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemAlloc() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemAlloc() allocates memory; the number of bytes that are allocated
+        is `itemCount' multiplied by `itemSize'.
+
+        Multiple calls to CSCmemAlloc() can use the same `memList'; each
+        allocated memory block will be put into `memList' and CSCmemFree() can
+        be called with `memList' to free the block, or CSCmemListFree() can be
+        called to free all the memory blocks in `memList'.
+
+        NOTE    `memList' must first be created with CSCmemInit().
+
+        If CSCmemAlloc() is compiled with DEBUG, then CSCmemAlloc() will fill
+        newly allocated memory with some well-defined garbage to prevent the
+        use of accidentally good values.
+
+        `tagData' is provided for profiling `memList's. When profiling,
+        `memList' continues to contain a record of the allocation and free of
+        the memory; the list doesn't really get smaller (the actual memory
+        allocations for client code are of course freed). `tagData' is an
+        arbitrary integer that the caller supplies for easier identification
+        when using CSCmemListPrintProfile() or CSCmemListWriteProfile() on
+        `memList'.
+
+EXAMPLE
+        CSCmemListType   myList;
+        void*            myData;
+        int              mysize = 100;
+        int              myTag  = 55;
+        int              stat;
+
+        myList = CSCmemInit ("my data", NULL, NULL, NULL, CSC_DO_PROFILING);
+        stat = CSCmemAlloc (myList, &myData, 1, mySize, myTag);
+           .
+           .
+           .
+        stat = CSCmemFree (myList, &myData, myTag);
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

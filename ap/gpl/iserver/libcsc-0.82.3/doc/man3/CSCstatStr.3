@@ -1,0 +1,24 @@
+CSCstatStr(3)
+
+NAME
+        CSCstatStr - get string describing libcsc function return value
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        const char*   CSCstatStr (int status);
+
+DESCRIPTION
+        Most libcsc functions return an integer status; this integer status is
+        passed as the `status' argument to CSCstatStr().
+
+        CSCstatStr() returns a pointer to a constant ASCII-Z string containing
+        the text describing `status'.
+
+SEE ALSO
+	CSCcflags(3)
+	CSCldflags(3)
+	CSClibs(3)
+	CSCversion(3)
+	CSCcredits(3)
+	CSCchkup(3)

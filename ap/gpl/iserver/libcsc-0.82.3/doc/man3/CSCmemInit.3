@@ -1,0 +1,80 @@
+CSCmemInit(3)
+
+NAME
+        CSCmemInit - initialize a csc memlist for subsequent memory allocations
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCmemListType   CSCmemInit (
+                                    const char*            name,
+                                          CSCtagFnType     tagFunc,
+                                          CSCmonFnType     monFunc,
+                                          void*            monData,
+                                          CSCprofileType   profiling
+                                    );
+
+RETURN VALUE
+        If successful CSCmemInit() returns a newly created csc memlist;
+        otherwise, when unsuccessful CSCmemInit() returns NULL.
+
+DESCRIPTION
+        CSCmemInit() creates and returns a csc memlist.
+
+        A csc memlist is needed to allocate and free memory using the csc memory
+        subsystem. The csc memory subsystem records statistics on its allocate
+        and free activities into csc memlists. The csc memory subsystem also
+        uses the csc memlist to help detect memory leaks and other misuses.
+
+        Memory allocated with a given csc memlist must be freed with the same
+        csc memlist.
+
+        NOTE    No arguments are copied; the string pointed to by `name' (if
+                not NULL) and the client data pointed to by `monData' (if not
+                NULL) are *NOT* copied. The client is responsible for ensuring
+                that the data are valid until the csc memlist itself is freed by
+                CSCmemListFree().
+
+        `name' can be NULL, but it should point to a descriptive string. The
+        string is printed when the csc memlist profile is printed.
+
+        `tagFunc' can be NULL. When it is not NULL, it is used as a callback
+        function during the printing of a csc memlist profile to retreive a
+        (descriptive) string associated with the integer tag given when memory
+        was allocated/freed. This helps to identified memory that has not been
+        freed (leaked).
+
+        `monFunc' and `monData':
+        The csc memory subsystem makes no assumptions about the threading
+        environment, or even if the environment is threaded or not. It is the
+        caller's (client's) responsibility to provide mutual exclusion locking
+        for the csc memory subsystem. This allows the csc memory subsystem to
+        function in multiple environments. `monFunc' is used to provide mutual
+        exclusion locking for thread safty. If a proper modFunc is provided,
+        then multiple threads may share a given csc memlist to allocate and free
+        memory. `monFunc' is a callback function used to enter and exit the
+        critical regions when updating the csc memlist. `monFunc' is invoked
+        with the the client's `monData'; the calback function should enforce
+        locking (mutex). `monFunc' is invoked with CSC_IO_IN and `monData' when
+        entering a critical region an it is invoked with CSC_IO_OUT and
+        `monData' when exiting a critical region. `monData' is provided so that
+        the client can have it point to the necessary mutex (and/or whatever)
+        and the csc memory subsystem delivers it to the callback. In this way
+        the client does not otherwise have to keep track of the mutex. If the
+        environment is not threaded, and no mutex is needed, then `monFunc'
+        should be NULL.
+
+        `profiling' specifies whether alocate/free statistics should actually be
+        generated and kept in the csc memlist.
+
+SEE ALSO
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

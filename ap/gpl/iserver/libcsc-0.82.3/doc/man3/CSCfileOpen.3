@@ -1,0 +1,25 @@
+CSCfileOpen(3)
+
+NAME
+        CSCfileOpen - create a file in a path that doesn't (yet) exist
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        FILE*   CSCfileOpen (
+                            const char*            const path,
+                            const int                    mask,
+                            const size_t                 pathMax,
+                                  CSCmemListType   const memList,
+                                  int                    memTag
+                            );
+
+RETURN VALUE
+        CSCfileOpen() returns a new file, open for writing, if successful. On
+        failure, CSCfileOpen() returns NULL.
+
+DESCRIPTION
+        CSCfileOpen() opens a new file for writing, creating the path if
+        necessary.
+
+SEE ALSO

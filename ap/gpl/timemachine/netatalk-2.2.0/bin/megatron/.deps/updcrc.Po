@@ -1,0 +1,5 @@
+updcrc.o: updcrc.c ../../config.h updcrc.h
+
+../../config.h:
+
+updcrc.h:

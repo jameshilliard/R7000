@@ -1,0 +1,33 @@
+CSCsymtabStat(3)
+
+NAME
+        CSCsymtabStat - retrieve statistics for a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymtabStat (
+                            CSCsymTableType   const symTab,
+                            size_t*           const sizePtr
+                            );
+
+RETURN VALUE
+        CSCsymtabStat(), if successful, returns RTS_OK; otherwise,
+        RTS_NOTFOUND, RTS_BADARG, and RTS_ERROR can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCsymtabStat() queries the libcsc symbol table specified by the
+        opaque `symTab'.
+
+        If `sizePtr' is not NULL, then the count of symbols in `symTab' is
+        written to the size_t that is pointed to by `sizePtr'.
+
+SEE ALSO
+        CSCsymtabNew(3)
+        CSCsymtabDel(3)
+        CSCsymtabEntryPut(3)
+        CSCsymtabEntryGet(3)
+        CSCsymtabEntryDel(3)
+        CSCsymtabEntryNext(3)

@@ -1,0 +1,71 @@
+CSCsockPassiveTCP(3)
+
+NAME
+        CSCsockPassiveTCP - listen for connections on a socket
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsockPassiveTCP (
+                                      int*           const socketPtr,
+                                const char*                service,
+                                      int                  connectCount,
+                                      CSCgenFnType         errorCallback
+                                );
+
+RETURN VALUE
+        CSC_OK .......... successful, and the integer pointed to by socketPtr
+                          will be updated with the new socket descriptor
+
+        CSC_NOSVC ....... can't make sense of service
+
+        CSC_NOPROT ...... can't make any sense out of the UDP protocol
+
+        CSC_NOSOCK ...... can't allocate a new socket or can't set a socket
+                          option
+
+        CSC_NOBIND ...... can't bind socket to service
+
+        CSC_NOLISTEN .... can't listen to socket
+
+        CSC_BADARG ...... socketPtr or service is NULL or connectCount is zero
+
+DESCRIPTION
+        CSCsockPassiveTCP() attempts to create a PF_INET (IPv4) protocol socket
+        and prepares it to accept TCP (SOCK_STREAM) connections. No accept() is
+        actually tried, this must be done after calling CSCsockPassiveTCP().
+
+        If successful, CSCsockPassiveTCP() creates a socket that is prepared
+        to accept a connection from any IP.
+
+        The `service' argument is a string that represents the the service (see
+        /etc/services) or port number. If `service' specifies port number, then
+        the integer value must fit in an unsigned 16 bit variable
+        (0 <= sevice <= 65535). For example:
+
+                service
+                -------
+                "echo"
+                "5200"
+                "fsp"
+                "7200"
+
+        The socket is set with the SO_REUSEADDR option to enable quick reuse of
+        the same port.
+
+        `connectCount' is the connection backlog (the number of allowed
+        concurrent connections).
+
+        Error conditions are announced via `errorCallback', if it is not NULL.
+        The `errorCallback' function is called with the CSCsockPassiveUDP()
+        return value, errno, and a string describing the error e.g.,
+
+                (*errorCallback) (CSC_NOSOCK, errno, "can't create socket");
+
+BUGS
+        Cannot select a desired host from which to accept a connection.
+
+SEE ALSO
+        CSCsockConnectTCP(3)
+        CSCsockConnectUDP(3)
+        CSCsockPassiveUDP(3)

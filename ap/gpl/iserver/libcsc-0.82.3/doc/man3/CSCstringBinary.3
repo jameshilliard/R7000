@@ -1,0 +1,36 @@
+CSCstringBinary(3)
+
+NAME
+        CSCstringBinary - format an ASCII string to represent a binary number
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCstringBinary (
+                                char*   const bufPtr,
+                                int32         item
+                                );
+
+RETURN VALUE
+        CSCstringBinary() always returns bufPtr.
+
+DESCRIPTION
+        If `bufPtr' is not NULL, then the integer value of `item', in binary, is
+        written to bufPtr with a preceding "0b" and is represented in 32 bits
+        with the preceding two "0b" characters and terminating '\0' for a total
+        of 35 characters.
+
+EXAMPLE
+        char*   buf[35]; // no smaller! and bigger is a waste.
+        int32   i = 72;
+
+        (void)CSCstringBinary (buf, i);
+        //
+        // Now: buf = "0b0000000001001000"
+
+BUGS
+        Beware buffer overflows; they are your responsibility.
+
+SEE ALSO
+        CSCstringOctal(3)
+        CSCstringBasename(3)

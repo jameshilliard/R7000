@@ -1,0 +1,47 @@
+CSClistNodeStat(3)
+
+NAME
+        CSClistNodeStat - retrieve data fields from a libcsc list entry (node)
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistNodeStat (
+                              CSClistNodeType   const node,
+                              void**            const itemPtrPtr,
+                              size_t*           const itemSizePtr
+                              );
+
+RETURN VALUE
+        CSClistNodeStat(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistNodeStat() retrieves the relevant values of a list entry (node).
+
+        If `itemPtrPtr' is not NULL, then entry's (node's) data pointer is
+        written to the void pointer that is pointed to by `itemPtrPtr'.
+
+        If `itemSizePtr' is not NULL, then entry's (node's) data size is
+        written to the size_t that is pointed to by `itemSizePtr'.
+
+        If both itemPtrPtr and itemSizePtr are NULL, then CSClistNodeStat()
+        doesn't do anything very interesting.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

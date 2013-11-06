@@ -1,0 +1,13 @@
+diff -Naur a/avahi-core/server.c b/avahi-core/server.c
+--- a/avahi-core/server.c	2010-07-30 17:24:08.000000000 +0530
++++ b/avahi-core/server.c	2010-07-30 17:24:18.000000000 +0530
+@@ -1217,8 +1217,8 @@
+ static void register_stuff(AvahiServer *s) {
+     assert(s);
+ 
+-    server_set_state(s, AVAHI_SERVER_REGISTERING);
+     s->n_host_rr_pending ++; /** Make sure that the state isn't changed tp AVAHI_SERVER_RUNNING too early */
++    server_set_state(s, AVAHI_SERVER_REGISTERING);
+ 
+     register_hinfo(s);
+     register_browse_domain(s);

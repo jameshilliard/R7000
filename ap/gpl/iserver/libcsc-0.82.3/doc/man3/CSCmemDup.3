@@ -1,0 +1,62 @@
+CSCmemDup(3)
+
+NAME
+        CSCmemDup - duplicate (dynamically allocate and copy) memory
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemDup (
+                              CSCmemListType   const memList,
+                              void**           const dstPtrPtr,
+                        const void*                  srcPtr,
+                              size_t                 size,
+                              int                    tagData
+                        );
+
+RETURN VALUE
+        CSC_OK ......... successful, the memory pointed to by memPtr is
+                         duplicated
+
+        CSC_BADARG ..... memList, dstPtrPtr, or srcPtr is NULL or size is zero
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemDup() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemDup() dynamically allocates `size' bytes and copies `size' bytes
+        from `srcPtr' into the newly allocated memory.
+
+        `tagData' is provided for profiling `memList's. When profiling,
+        `memList' continues to contain a record of the allocation and free of
+        the memory; the list doesn't really get smaller (the actual memory
+        allocations for client code are of course freed). `tagData' is an
+        arbitrary integer that the caller supplies for easier identification
+        when using CSCmemListPrintProfile() or CSCmemListWriteProfile() on the
+        `memList'.
+
+        `srcPtr' can point to any readable memory. This may be usefull for
+        creating dynamic duplicates of constant strings, etc.
+
+EXAMPLE
+        CSCmemListType   myList;
+        void*            myData;
+        int              stat;
+
+        myList = CSCmemInit ("my data", NULL, NULL, NULL, CSC_DO_PROFILING);
+           .
+           .
+           .
+        stat = CSCmemDup (myList, &myData, "duplicate this string", 22, myTag);
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

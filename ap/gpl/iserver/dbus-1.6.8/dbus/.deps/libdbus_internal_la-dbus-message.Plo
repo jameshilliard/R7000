@@ -1,0 +1,162 @@
+libdbus_internal_la-dbus-message.lo: dbus-message.c ../config.h \
+ dbus-internals.h ../dbus/dbus-memory.h ../dbus/dbus-macros.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h \
+ ../dbus/dbus-types.h ../dbus/dbus-arch-deps.h ../dbus/dbus-errors.h \
+ ../dbus/dbus-protocol.h ../dbus/dbus-sysdeps.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdint.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h \
+ ../dbus/dbus-file.h ../dbus/dbus-string.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdarg.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/xlocale.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/locale.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/sys/poll.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/poll.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h \
+ ../dbus/dbus-threads-internal.h ../dbus/dbus-threads.h \
+ dbus-marshal-recursive.h ../dbus/dbus-list.h ../dbus/dbus-internals.h \
+ dbus-marshal-validate.h dbus-marshal-byteswap.h \
+ ../dbus/dbus-marshal-recursive.h dbus-marshal-header.h \
+ ../dbus/dbus-marshal-basic.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ ../dbus/dbus-marshal-validate.h dbus-signature.h dbus-message-private.h \
+ ../dbus/dbus-message.h ../dbus/dbus-message-internal.h \
+ ../dbus/dbus-resources.h ../dbus/dbus-connection.h ../dbus/dbus-shared.h \
+ ../dbus/dbus-dataslot.h ../dbus/dbus-marshal-header.h dbus-object-tree.h \
+ dbus-memory.h dbus-list.h dbus-threads-internal.h dbus-sysdeps-unix.h
+
+../config.h:
+
+dbus-internals.h:
+
+../dbus/dbus-memory.h:
+
+../dbus/dbus-macros.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h:
+
+../dbus/dbus-types.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-protocol.h:
+
+../dbus/dbus-sysdeps.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdint.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h:
+
+../dbus/dbus-file.h:
+
+../dbus/dbus-string.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdarg.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/xlocale.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/locale.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/sys/poll.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/poll.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h:
+
+../dbus/dbus-threads-internal.h:
+
+../dbus/dbus-threads.h:
+
+dbus-marshal-recursive.h:
+
+../dbus/dbus-list.h:
+
+../dbus/dbus-internals.h:
+
+dbus-marshal-validate.h:
+
+dbus-marshal-byteswap.h:
+
+../dbus/dbus-marshal-recursive.h:
+
+dbus-marshal-header.h:
+
+../dbus/dbus-marshal-basic.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/arm-brcm-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+../dbus/dbus-marshal-validate.h:
+
+dbus-signature.h:
+
+dbus-message-private.h:
+
+../dbus/dbus-message.h:
+
+../dbus/dbus-message-internal.h:
+
+../dbus/dbus-resources.h:
+
+../dbus/dbus-connection.h:
+
+../dbus/dbus-shared.h:
+
+../dbus/dbus-dataslot.h:
+
+../dbus/dbus-marshal-header.h:
+
+dbus-object-tree.h:
+
+dbus-memory.h:
+
+dbus-list.h:
+
+dbus-threads-internal.h:
+
+dbus-sysdeps-unix.h:

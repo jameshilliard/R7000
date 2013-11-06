@@ -1,0 +1,64 @@
+CSClistPush(3)
+
+NAME
+        CSClistPush - create a new entry and push it onto a libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistPush (
+                                CSClistType        const list,
+                                CSCdataCntrlType         push,
+                          const void*              const itemPtr,
+                                size_t                   itemSize
+                          );
+
+RETURN VALUE
+        CSClistPush(), if successful, returns CSC_OK; otherwise, CSC_NOTFOUND,
+        CSC_BADARG, and CSC_CORRUPT can be returned corresponding to NULL
+        pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistPush() creates a libcsc list entry from `itemPtr' and `itemSize',
+        and pushes it onto the list pointed to by `list'.
+
+        `push' specifies how the client data pointed to by `itemPtr' is used:
+
+                CSC_DATA_NODUP  The new list entry simply copies the data
+                                pointer, `itemPtr', itself.  If the data pointed
+                                to by `itemPtr' is dynamically allocated and is
+                                dellocated while the list entry has a pointer
+                                to it, then there will be an aliasing error and
+                                goblins will eat you.
+
+                CSC_DATA_DUP    The data pointed to by `itemPtr' is copied for
+                                `itemSize' bytes into a new dynamically
+                                allocated storage.  The client code is
+                                responsible for deallocating the storage when
+                                the entry is popped from the list or there will
+                                be a memory leak, and you will have to tell your
+                                mother what you've done.
+
+        Be careful of mixing push types CSC_DATA_NODUP and CSC_DATA_DUP in the
+        same list; there may be no way for clients to later tell these entries
+        apart from each other.
+
+        CSClistDel() and CSClistNodeDel() should correctly deallocate data for
+        entries with CSC_DATA_DUP push types.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

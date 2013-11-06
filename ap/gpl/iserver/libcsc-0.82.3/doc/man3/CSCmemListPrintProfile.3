@@ -1,0 +1,39 @@
+CSCmemListPrintProfile(3)
+
+NAME
+        CSCmemListPrintProfile - write a memlist profile to standard output
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemListPrintProfile (
+                                     CSCmemListType   const memList,
+                                     CSCprofileType         showing
+                                     );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_BADARG .... memList is NULL
+
+        CSC_CORRUPT ... corruption is detected in memList
+                        and CSCmemListWriteProfile() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemListPrintProfile() writes to standard output the information of
+        the dynamically allocated memory blocks that are described in `memList'.
+
+        CSCmemListPrintProfile() calls CSCmemListWriteProfile() to do the work;
+        so, go read about CSCmemListWriteProfile().
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListWriteProfile(3)

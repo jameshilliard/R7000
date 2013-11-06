@@ -1,0 +1,30 @@
+CSCfileBaseName(3)
+
+NAME
+        CSCfileBaseName - strip directory from pathname
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCfileBaseName (
+                                const char*            const path,
+                                      CSCmemListType   const memList,
+                                      int                    memTag
+                                );
+
+RETURN VALUE
+        CSCfileBaseName() returns a pointer to a new string that begins with the
+        first character in path after the last occurence of a '/' character.
+
+        CSCfileBaseName() returns a pointer to path if the path string does not
+        contain a '/' character.
+
+        CSCfileBaseName() returns NULL if `path' or `memList' argument is NULL.
+
+DESCRIPTION
+        If CSCfileBaseName() is successful, it returns a pointer to a new string
+        that is allocated by CSCmemAlloc(); the string must be freed with
+        CSCmemFree() to avoid a memory leak.
+
+SEE ALSO
+        CSCfilePathName(3)

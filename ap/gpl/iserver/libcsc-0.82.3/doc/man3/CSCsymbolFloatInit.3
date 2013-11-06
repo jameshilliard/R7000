@@ -1,0 +1,52 @@
+CSCsymbolFloatInit(3)
+
+NAME
+        CSCsymbolFloatInit - initialize a floating point symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolFloatInit (
+                                       CSCsymbolType*   const symbol,
+                                 const char*            const symName,
+                                       long                   symType,
+                                       float                  symVal
+                                 );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_BADARG .... symbol or symName is equal to NULL
+
+DESCRIPTION
+        CSCsymbolFloatInit() initializes the symbol pointed to by `symbol' with
+        `symName', `symType', and `symVal'. Client code probably should use the
+        same `symType' value for all floating point symbols, and `symName'
+        probably should be the ASCII string equivalent of `symVal'.
+
+BUGS
+        The pointer `symName' is copied into the symbol structure; therefore, if
+        `symName' is subsequently freed, then the newly initialized symbol will
+        have an aliasing error (pointer to freed memory).
+
+        And remember:   CSCsymbolFloatDel() will try to deallocate the name, so
+                        it won't be happy if the name was not dynamically
+                        allocated.
+
+HINT
+        The symbol's valueFlag field is set to 2.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

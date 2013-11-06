@@ -1,0 +1,57 @@
+CSClistNodeFindByValue(3)
+
+NAME
+        CSClistNodeFindByValue - find libcsc list entry by data value
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSClistNodeType   CSClistNodeFindByValue (
+                                                 CSClistType       const list,
+                                                 CSClistBiasType         bias,
+                                           const void*             const itemPtr
+                                                 );
+
+RETURN VALUE
+        CSClistNodeFindByValue(), returns a CSClistNodeType if it is
+        successful, or NULL if otherwise not successful.
+
+DESCRIPTION
+        CSClistNodeFindByValue() searches `list' for an entry (node).  The
+        search is either from the head of `list' or the tail; this is specified
+        by `bias', which is one of
+
+                CSC_LIST_HEAD   Search from the most recently added entries.
+
+                CSC_LIST_TAIL   Search from the oldest entry.
+
+        Beginning at the specified end (head or tail), each entry's (node's)
+        data is compared against the data at `itemPtr'.  This compare is
+        implemented by `list's client-specified compare function.  If `list'
+        does not have a client specified compare function, then
+        CSClistNodeFindByValue() will fail and return NULL.
+
+        `list's client-specified compare function is used in this manner:
+
+                if ((*list->cfunc) ((void*)itemPtr, (void*)entry->dataPtr) == 0)
+                        return (entry);
+
+        If `list's client-specified compare function returns zero, then the
+        search is terminated, and the first entry found containing the desired
+        data is returned.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

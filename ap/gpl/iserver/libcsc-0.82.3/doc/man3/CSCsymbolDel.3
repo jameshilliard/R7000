@@ -1,0 +1,49 @@
+CSCsymbolDel(3)
+
+NAME
+        CSCsymbolDel - remove a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolDel (
+                           CSCsymbolType**   const symPtrPtr,
+                           CSCmemListType    const memList,
+                           int                     memTag
+                           );
+
+RETURN VALUE
+        CSC_OK ....... successful
+
+        CSC_BADARG ... symPtrPtr or memList is NULL
+
+        CSC_ERROR .... other errors
+
+DESCRIPTION
+        CSCsymbolDel() deletes the symbol whose pointer is pointed to by
+        `symPtrPtr'.
+
+        If the symbol was created by CSCsymbolFloatInit(), CSCsymbolIntInit(),
+        CSCsymbolPtrInit(), or otherwise does not have a dynamically allocated
+        name, then there will be some complaints (crashes? heap corruption?)
+        when the name field is freed.
+
+HINT
+        If the symbol's valueFlag field is set to 1, 2 or 3, then the name
+        field is deallocated.  If the symbol's valueFlag field is set to 3,
+        then the value.pointer field is also deallocated.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)

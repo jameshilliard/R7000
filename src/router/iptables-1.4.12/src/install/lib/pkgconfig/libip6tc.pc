@@ -1,0 +1,10 @@
+prefix=/disk2/antony/R7000/GPL/V1.0.1.22/V1.0.1.22_1.0.15/src/router/iptables-1.4.12/src/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name:		libip6tc
+Description:	iptables IPv6 ruleset ADT and kernel interface
+Version:	1.4.12.2
+Libs:		-L${libdir} -lip6tc
+Cflags:		-I${includedir}

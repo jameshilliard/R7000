@@ -1,0 +1,53 @@
+CSCsymbolPtrInit(3)
+
+NAME
+        CSCsymbolPtrInit - initialize a pointer symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolPtrInit (
+                                     CSCsymbolType*   const symbol,
+                               const char*            const symName,
+                                     long                   symType,
+                               const void*                  symVal,
+                                     size_t                 symValSize
+                               );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_BADARG .... symbol, symName, or symVal is equal to NULL
+
+DESCRIPTION
+        CSCsymbolPtrInit() initializes the symbol pointed to by `symbol' with
+        `symName', `symType', and `symVal' for `symValSize'. Client code
+        probably should use the same `symType' value for all pointer symbols.
+
+BUGS
+        The pointers `symName' and `symval' are copied into the symbol
+        structure; therefore, if `symName' or `symVal' is subsequently freed,
+        then the newly initialized symbol will have an aliasing error (pointer
+        to freed memory).
+
+        And remember:   CSCsymbolPtrDel() will try to deallocate the name and
+                        pointer, so it won't be happy if they were not
+                        dynamically allocated.
+
+HINT
+        The symbol's valueFlag field is set to 3.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

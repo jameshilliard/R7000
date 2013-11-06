@@ -1,0 +1,323 @@
+
+                                    libcsc
+                         Programmers' Resource Library
+
+                 <http://sourceforge.net/projects/hackerlabs>
+                      <http://hackerlabs.sourceforge.net>
+
+                               Douglas R. Jerome
+                          <jerome@globalcrossing.net>
+                        <djerome@users.sourceforge.net>
+
+
+
+==========
+Disclaimer
+==========
+
+caveat:	This file was written by a nerd engineer type.  It may not be easy to
+	read or understand.  You will, no doubt, find sentences that aren't.
+	My writing style is modeled on:  "This is an incomplete. sentence."
+
+
+
+===========
+Description
+===========
+
+This is a distribution of libcsc, a "Programmers' Resource Library".  That's a
+gandiose name.  I don't really mean to imply much by the name; I just have a
+hard time thinking up good names.
+
+This library is an upgrade of the previous libcsc.  The upgrade simplifies many
+functions and supports threadsafe capability.
+
+libcsc contains functions implementing general subsystems.  By subsystem, I
+mean an abstract data type, or a poor man's object.  What this really means in
+code is, for a hash table as an example, all the hash table functions are in
+the same .c source file with the appropriate parts hidden away (static) from
+the user of the hash table functions during link time.  All exportable
+definitions and constants that the client of the hash table functions would
+want are in a .h file.
+
+Not everything in libcsc is part of something so conceptually complete that it
+all should legitimately be part of some subsystem.  But, everything in libcsc
+is a part of some group, and I call these groups subsystems.
+
+Some things might be put into libcsc because they're reusable functionality
+which are (hopefully) reinforced with debug aids.  Typically, the debug aids
+are just a bunch of assertions.
+
+libcsc currently contains these subsystems:
+
+	file in libcsc/src		functionality
+	------------------		-------------
+	config-main.c ................. main program prints libcsc configuration
+	csc_config.c .................. libcsc configuration functions
+	csc_file.c .................... file/path name subsystem
+	csc_hash.c .................... hash table subsystem
+	csc_io.c ...................... general I/O functions
+	csc_list.c .................... general list (queue/stack) subsystem
+	csc_math.c .................... some math functions
+	csc_mem.c ..................... dynamic memory allocation functions
+	csc_notify.c .................. notification subsystem
+	csc_sock.c .................... BSD socket functions
+	csc_string.c .................. string handling functions
+	csc_symbol.c .................. symbol structure managing function
+	csc_symtab.c .................. symbol table subsystem
+	csc_sys.c ..................... general system functions
+	csc_timer.c ................... simple stopwatch timer functions
+	csc_tree.c .................... balanced binary tree subsystem
+	xcsc_debug.c .................. hidden assertion helper functions
+
+It is the goal of libcsc to implement bug catching features in commonly used
+functionality and thereby provide a common, reusable base for constructing
+solid applications.
+
+For efficiency sake, libcsc can be compiled without DEBUG (see INSTALLATION
+below) and continue to be used for its reusable subsystems.  I use two versions
+of libcsc, one standard (actually with optimization) and one debug.  I use the
+debug version for application development, and then relinked the application to
+the standard, nondebug version of libcsc for distribution.
+
+
+
+============
+Requirements
+============
+
+- ANSI Compliant Compiler
+- ANSI C Library
+- BSD Socket Subsystem
+
+	The libcsc code is mostly developed with strict ANSI compliance
+	enforced by the compiler, not by my knowledge of ANSI.  The compilation
+	command lines containing the ANSI compliance switches are in my
+	makefiles (which are the makefiles that are in this distribution).
+
+	libcsc uses the BSD socket subsystem and won't completely build without
+	it.  Without your compilation and runtime system having a BSD socket
+	subsystem you'll probably get a libcsc.a when you build it, but it
+	won't have its own BSD socket subsystem.
+
+	With any modern system the above requirements shouldn't be any problem.
+	If you run into other things, email me about it and I'll do my best to
+	fix it up.
+
+
+
+===========
+Directories
+===========
+
+This distribution should have these directories:
+
+	directory	contents
+	---------	--------
+	bin		libcsc-config executable appears in here
+	doc		manpage-like docs, reference manual maybe
+	include		client accessible header files live here
+	lib		libcsc.a and libcsc.o appears in here
+	src		libcsc *.c source code lives here
+	t		unix-targeted test programs live here
+	tools		miscellaneous scripts (for building libcsc) live here
+
+
+
+=============
+Documentation
+=============
+
+BUGFORM .......	Use this to send bug reports.  Please do use it.
+
+BUGS ..........	List of known bugs.
+
+CHECKSUMS .....	A list of checksums for the source code.
+
+COPYRIGHT .....	The LGPL.
+
+CREDITS .......	List of people that I know have contributed to libcsc.
+
+ERRATA ........	List of known limitations.  To do list.  List user visible
+		changes from the version to version.
+
+FAQ ...........	Frequently Asked Questions.
+
+INSTALL .......	Description of libcsc, build and installation instructions, and
+		some lame troubleshooting tips.
+
+LICENSE .......	LGPL
+
+README ........	Quick notes, if any.
+
+doc/reference.manual ..........	Technical reference / programming guide for
+				libcsc.
+
+doc/man? ......................	Man page-like files for the libcsc functions
+				and subsystems.
+
+
+
+============
+INSTALLATION
+============
+
+*******
+******* Read the BUGS/ERRATA file.
+*******
+
+Unpack the libcsc library tarball, libcsc-x.x.x.tar.gz.  You can use these
+commands:
+
+	gunzip libcsc-x.x.x.tar.gz
+	tar xf libcsc-x.x.x.tar
+
+If for some strange reason you don't have the tarball, you can get it at:
+
+	http://sourceforge.net/projects/hackerlabs
+
+<LIBCSC> is used below to designate the directory created when you unpacked the
+libcsc-x.x.x.tar.gz tarball.
+
+NOTE	This all works with gcc on Linux.  That's all I have access to.
+
+I highly recommend building and installing the libcsc compiled with the DEBUG
+macro defined.  When libcsc is built for debugging, it will help you catch
+bugs; I hope.  This library is loaded with assertions and data checks that are
+only enabled when built for debugging.  After you are comfortable with your
+application (and libcsc), relink your application with the standard, nondebug
+version of libcsc.  Build the debug version of libcsc by defining the macro
+DEBUG on the make command line:
+
+	make CDEBUGFLAGS=-DDEBUG
+
+To build with debugger information, or, conversly, to build with a high level
+of optimization, one can conveniently use the CC_PARAMS macro on the make
+command line, like this:
+
+	make CC_PARAMS=-g  # build with debugger option
+	make CC_PARAMS=-O3 # build with high level of optimization
+
+Build libcsc
+------------
+
+OPTION	You have the option to just dive into the various libcsc makefiles and
+	build it the way you want.
+
+	I haven't yet learned better.  I expect as much hacking to take place
+	on libcsc's makefiles as on its source code.  If you use libcsc then
+	you might (should) look into the makefiles and understand what it is
+	that you can do with CDEBUGFLAGS and CC_PARAMS.
+
+1.	Go to the <LIBCSC> directory and type the following at your shell
+	prompt (to make the library with debugging instrumentation and symbols
+	highly suggested):
+
+		cd src
+		make CDEBUGFLAGS=-DDEBUG CC_PARAMS=-g
+
+	or if you want to make the library without the DEBUG code and with
+	optimization:
+
+		cd src
+		make CC_PARAMS=-O3
+
+1.5.	You now have libcsc.a and libcsc.o sitting in <LIBCSC>/lib.  There
+	probably also is libcsc.a.names and libcsc.o.names in the src
+	directory; these are the corresponding symbol tables.
+
+2.	You can use libcsc from its current location.  Simply add
+	<LIBCSC>/include to your compilation include path, add <LIBCSC>/lib to
+	your link library path, and link your application with a -lcsc flag.
+
+Install libcsc
+--------------
+
+	You might have to be a privileged user (root) to do this.  Remember,
+	you can change the install location in the makefile; see step 1.
+
+1.	The default installation directory is /usr/local.  The library is
+	installed into /usr/local/lib (INSTALLLIB in the makefile), and the
+	header files are installed into /usr/local/include (INSTALLINC in the
+	makefile).  These directories might need to already exist.  If you
+	want to change the default install location you can edit
+	<LIBCSC>/src/Makefile.
+
+2.	Install the libcsc header files and library:  cd into <LIBCSC>/src,
+	type the following into your shell prompt:
+
+		make install
+
+	This will put the libcsc header files into /usr/local/include and put
+	libcsc.a and libcsc.o into /usr/local/lib (if you haven't changed a
+	default installation directory).
+
+Summary
+-------
+
+1.	For the debug version of libcsc (HIGHLY recommended):  cd into
+	<LIBCSC>/src, type the following into your shell prompt:
+
+		make CDEBUGFLAGS=-DDEBUG CC_PARAMS=-g
+		make install
+
+	You will have (where <INSTALL> is the installation directory which
+	is defaulted to /usr/local):
+
+		<INSTALL>/include/*.h
+		<INSTALL>/lib/libcsc.a
+		<INSTALL>/lib/libcsc.o
+
+2.	For the standard, nondebug version of libcsc:  cd into <LIBCSC>/src,
+	type the following into your shell prompt:
+
+		make CC_PARAMS=-O3
+		make install
+
+	You will have (where <INSTALL> is the installation directory which
+	is defaulted to /usr/local):
+
+		<INSTALL>/include/*.h
+		<INSTALL>/lib/libcsc.a
+		<INSTALL>/lib/libcsc.o
+
+
+
+===========================
+How to Make a gdb Backtrace
+===========================
+
+Backtraces can help me fix bugs that make applications crash.  If you find a
+bug that crashes an application, please send a backtrace with your bug report.
+
+To make a useful backtrace, you need a core file with debugging information
+produced by the application when it crashes.
+
+When it does crash, type the following from your shell:
+
+	script
+	gdb <application> core
+
+Then, in the gdb prompt type "bt".  Blammo, you've got the backtrace in front
+of you.  Quit from gdb by typing "quit", then in the shell prompt type "quit".
+The file named typescript will contain the backtrace.
+
+
+
+==========
+Copyrights
+==========
+
+The "Reference Manual for libcsc", if any, is OWNED and copyrighted by
+Douglas R. Jerome and is LICENSED through the GNU Free Documentation License.
+The "Reference Manual for libcsc", if any, and its license can be found in the
+doc directory of this distribution.
+
+libcsc is OWNED and copyrighted by Douglas R. Jerome and is LICENSED (read the
+LICENSE file) through the GNU Library General Public License.  Read the
+COPYRIGHT file for the complete license.
+
+	I don't really care what you do with these files; I only would like
+	some credit for the work I did on them (read the LICENSE file).
+
+[eof]

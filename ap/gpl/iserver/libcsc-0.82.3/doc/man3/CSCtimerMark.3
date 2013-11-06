@@ -1,0 +1,36 @@
+CSCtimerMark(3)
+
+NAME
+        CSCtimerMark - create a mark in a timer
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCtimerMark (
+                           CSCtimerType   const timer
+                           );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_ERROR ..... an error occurs trying to get system time
+
+        CSC_BADARG .... timer is NULL
+
+        CSC_CORRUPT ... corruption is detected in timer
+                        and CSCtimerMark() is compiled with DEBUG
+
+DESCRIPTION
+        CSCtimerMark() creates a mark in `timer' for the caller's subsequent
+        call to CSCtimerDiff() with `timer'.
+
+        Given the some `timer', CSCtimerDiff() will create the time value of
+        the number of seconds that passed since the call to this function
+        CSCtimerMark().
+
+SEE ALSO
+        PRtimerInit(3)
+        PRtimerDone(3)
+        PRtimerClear(3)
+        PRtimerDiff(3)
+        PRtimerStat(3)

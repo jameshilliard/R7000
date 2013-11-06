@@ -1,0 +1,29 @@
+CSCnotificationBoardDel(3)
+
+NAME
+        CSCnotificationBoardDel - completely remove a notification board
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCnotificationBoardDel (
+                                      CSCnotificationBoardType   const board
+                                      );
+
+RETURN VALUE
+        CSCnotificationBoardDel(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCnotificationBoardDel() deletes the notification `board' including all
+        the notification entries it contains.
+
+SEE ALSO
+        CSCnotificationBoardNew(3)
+        CSCnotificationBoardPrint(3)
+        CSCnotificationNew(3)
+        CSCnotificationDel(3)
+        CSCnotificationPost(3)
+        CSCnotificationRegister(3)

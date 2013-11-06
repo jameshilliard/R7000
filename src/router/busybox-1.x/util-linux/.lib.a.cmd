@@ -1,0 +1,1 @@
+cmd_util-linux/lib.a := rm -f util-linux/lib.a; arm-brcm-linux-uclibcgnueabi-ar  rcs util-linux/lib.a util-linux/dmesg.o util-linux/more.o util-linux/mount.o util-linux/pivot_root.o util-linux/rdate.o util-linux/umount.o

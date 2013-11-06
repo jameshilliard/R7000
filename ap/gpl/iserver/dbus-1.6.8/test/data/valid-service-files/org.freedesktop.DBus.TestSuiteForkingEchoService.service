@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.freedesktop.DBus.TestSuiteForkingEchoService
+Exec=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/dbus-1.6.8/test/test-service org.freedesktop.DBus.TestSuiteForkingEchoService fork

@@ -1,0 +1,44 @@
+CSClistWrite(3)
+
+NAME
+        CSClistWrite - write a libcsc list in an ASCII format
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistWrite (
+                           int                 fd,
+                           CSClistType   const list
+                           );
+
+RETURN VALUE
+        CSClistWrite(), if successful, returns CSC_OK; otherwise, CSC_NOTFOUND,
+        CSC_BADARG, and CSC_CORRUPT can be returned corresponding to NULL
+        pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistWrite() writes to `fd' the libcsc list represented by the opaque
+        `list' in an ASCII format.  Small, simple lists will be human-readable
+        by patient humans, but CSClistRead() will be happy to read it and create
+        another duplicate libcsc list.  In this way, libcsc lists can be
+        transported between processes, in space or time.
+
+        Caution: client pointers stored in the list will be severe aliasing
+                 bugs when they are read by a different process.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

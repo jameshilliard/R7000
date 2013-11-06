@@ -1,0 +1,50 @@
+CSClistSetCFunc(3)
+
+NAME
+        CSClistSetCFunc - set a libcsc list entry data compare function
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistSetCFunc (
+                              CSClistType    const list,
+                              CSCcmpFnType         funcptr
+                              );
+
+RETURN VALUE
+        CSClistSetCFunc(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistSetCFunc() sets the client-specified compare function `list'.
+
+        The client-specified compare function is used by the libcsc list find
+        functions CSClistNodeFindByValue() and CSClistNodeFindByReference().
+
+        `funcptr' is a function pointer pointer for a libcsc CSCcmpFnType
+        function that is called from the libcsc list find functions
+        CSClistNodeFindByValue() and CSClistNodeFindByReference().  The
+        prototype for `funcptr' is:
+
+                int    (*CSCcmpFnType) (void*, void*);
+
+        The client callback function `funcptr, is called with client supplied
+        data and a list entry data pointer.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

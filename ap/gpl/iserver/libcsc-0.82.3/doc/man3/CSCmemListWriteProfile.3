@@ -1,0 +1,58 @@
+CSCmemListWriteProfile(3)
+
+NAME
+        CSCmemListWriteProfile - write a memlist profile to a file descriptor
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemListWriteProfile (
+                                     CSCmemListType   const memList,
+                                     int                    fd,
+                                     CSCprofileType         showing
+                                     );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_BADARG .... memList is NULL
+
+        CSC_CORRUPT ... corruption is detected in memList
+                        and CSCmemListWriteProfile() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemListWriteProfile() writes to `fd' the information of the
+        dynamically allocated memory blocks that are described in `memList'.
+
+        Use CSCmemListWriteProfile() and CSCmemListPrintProfile() to verify that
+        there are no memory leaks.
+
+        This information written by CSCmemListWriteProfile() begins with a
+        header of the name, tag function, monitor function, and profiling as
+        specified when `memList' was created by CSCmemInit(). If `memList' was
+        specified when it was created by CSCmemInit() to be profiling, then the
+        allocate count, free count, current allocating, and highest allocation
+        are included in the header information.
+
+        If `showing' is CSC_SHOW_ALL, then a list of allocationed/freeed blocks
+        follows the header. The unfreed memory allocations are described by data
+        address, size, and the allocate tag provided by the client code that
+        called CSCmemAlloc(). If `memList' was specified to be profiling, then
+        freed memory alocations remain in the list. In this case they will be
+        included in this list of information but there is no data address and
+        size, only an allocate tag and a free tag.
+
+        If `showing' is CSC_SHOW_ALLOCATED, then only allocated blocks are
+        shown.
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)

@@ -1,0 +1,37 @@
+CSClistDel(3)
+
+NAME
+        CSClistDel - remove a libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistDel (
+                         CSClistType const   list
+                         );
+
+RETURN VALUE
+        CSClistDel(), if successful, returns CSC_OK; otherwise, CSC_NOTFOUND,
+        CSC_BADARG, and CSC_ERROR can be returned corresponding to NULL
+        pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistDel() completely removes the libcsc list represented by the
+        opaque `list'.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

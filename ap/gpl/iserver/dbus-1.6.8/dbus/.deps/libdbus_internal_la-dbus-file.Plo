@@ -1,0 +1,28 @@
+libdbus_internal_la-dbus-file.lo: dbus-file.c ../config.h dbus-file.h \
+ ../dbus/dbus-string.h ../dbus/dbus-macros.h ../dbus/dbus-types.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h \
+ ../dbus/dbus-arch-deps.h ../dbus/dbus-memory.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdarg.h \
+ ../dbus/dbus-errors.h ../dbus/dbus-protocol.h
+
+../config.h:
+
+dbus-file.h:
+
+../dbus/dbus-string.h:
+
+../dbus/dbus-macros.h:
+
+../dbus/dbus-types.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-memory.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stdarg.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-protocol.h:

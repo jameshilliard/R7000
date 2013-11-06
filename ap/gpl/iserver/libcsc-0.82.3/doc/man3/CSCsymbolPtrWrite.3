@@ -1,0 +1,34 @@
+CSCsymbolPtrWrite(3)
+
+NAME
+        CSCsymbolPtrWrite - write a pointer symbol in ASCII format
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolPtrWrite (
+                                const int                    fd,
+                                const CSCsymbolType*   const symPtr
+                                );
+
+RETURN VALUE
+        CSC_OK ....... always
+
+DESCRIPTION
+        CSCsymbolPtrWrite() writes to fd the fields of the symbol in an ASCII
+        format.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

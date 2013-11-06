@@ -1,0 +1,66 @@
+CSCioBufRead(3)
+
+NAME
+        CSCioBufRead - read an ASCII buffer
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCioBufRead (
+                           int                    fd,
+                           void**           const dataPtrPtr,
+                           size_t*          const sizePtr,
+                           CSCmemListType   const memList,
+                           int                    tagData
+                           );
+
+RETURN VALUE
+        CSC_OK ....... successful
+
+        CSC_BADARG ... fd is zero, or dataPtrPtr or sizePtr is NULL
+
+        CSC_ERROR .... read error; no bytes to read, or maybe an odd count of
+                       bytes where there was an expected even count
+
+        CSC_NOMEM .... can't allocate memory for the read buffer
+
+DESCRIPTION
+        CSCioBufRead() reads from `fd' an ASCII representation of arbitrary
+        bytes that are formatted as created by CSCioBufWrite(). The ASCII data
+        is converted to binary data and stored in a single dynamically allocated
+        memory block.
+
+        The void pointer that is pointed to by `dataPtrPtr' is updated with the
+        pointer to newly allocated memory containing the bytes read from fd.
+
+        NOTE    Since the buffer is dynamically allocated with CSCmemAlloc(),
+                the caller must free *bufPtrPtr with CSCmemFree() or
+                CSCmemListFree() to avoid a memory leak.
+
+        The size_t pointed to by `sizePtr' is updated to contain the number of
+        bytes in the newly allocated buffer.
+
+        Use CSCioBufWrite() and CSCioBufRead() to store and retrieve arbitrary
+        binary data in portable ASCII format.
+
+        `memList' and `tag' are as use with CSCmemAlloc().
+
+EXAMPLE
+        void*    data;
+        size_t   size;
+
+        // Read from fd (no NULL character received): "4\n12FACE55\n"
+
+        stat = rtsIObufRead (fd, &data, &size);
+
+        // Now: *data = 0x12, 0xFA, 0xCE, 0x55
+        //      size  = 4;
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)

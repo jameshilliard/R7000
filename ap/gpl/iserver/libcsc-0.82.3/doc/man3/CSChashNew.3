@@ -1,0 +1,58 @@
+CSChashNew(3)
+
+NAME
+        CSChashNew - create a new libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSChashTableType   CSChashNew (
+                                      const char*            const name,
+                                            CSChashKeyType         keySpec,
+                                            size_t                 size,
+                                            CSCmonFnType           monFunc,
+                                      const void*                  monData,
+                                            CSCprofileType         profiling
+                                      );
+
+RETURN VALUE
+        CSChashNew(), if successful, returns an opaque data type representing
+        a new libcsc hash table, or NULL if otherwise not successful.
+
+DESCRIPTION
+        CSChashNew() creates a new libcsc hash table with several attributes:
+        name, type of key, and number of hash locations.
+
+        `name' points to an arbitrary string that is used as the name of the
+        new libcsc hash table.
+
+        `keySpec' specifies the type of keys used by the new hash table; it is
+        one of:
+
+                CSC_HASH_ASCIIZ_KEY ... hash keys for this table will be ASCII
+                                        NULL-terminated (ASCIIZ) strings.
+
+                CSC_HASH_INT32_KEY .... hash keys for this table will be
+                                        integers of the type int32.
+
+        `size' specifies the number of hash locations, or buckets, in the new
+        libcsc hash table.  If size is zero, then the new libcsc hash table
+        will begin life with four hash locations and will quadruple whenever the
+        number of hash locations is some mysterious factor of the total number
+        of hashed items (gets overfull).
+
+        `profiling' can be CSC_DO_PROFILING or CSC_NO_PROFILING; it specifies
+        whether alocate/free, insertion/deletion, etc. statistics should
+        actually be generated and kept in the hash table.
+
+SEE ALSO
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryPut(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashEntryStat(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

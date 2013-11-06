@@ -1,0 +1,31 @@
+CSCfileGetHomeDir(3)
+
+NAME
+        CSCfileGetHomeDir - find home directory pathname
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCfileGetHomeDir (
+                                  const size_t                 pathSize,
+                                        CSCmemListType   const memList,
+                                        int                    memTag
+                                  );
+
+RETURN VALUE
+        CSCfileGetHomeDir() returns a pointer to the home directory associated
+        with the user ID of the process, if successful; otherwise, NULL is
+        returned.
+
+DESCRIPTION
+        The returned home directory string should be a length less than or
+        equal to `pathSize', including the terminating NULL character; if not,
+        then an unterminated string containing `pathSize' characters is
+        returned.
+
+        If successful, CSCfileGetHomeDir() returns a pointer to a new string
+        that is allocated by CSCmemAlloc(); the string must be freed with
+        CSCmemFree() to avoid a memory leak.
+
+SEE ALSO
+        CSCfileGetUserHomeDir(3)

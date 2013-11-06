@@ -1,0 +1,44 @@
+CSCsymbolPtrDel(3)
+
+NAME
+        CSCsymbolPtrDel - delete a pointer symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolPtrDel (
+                              CSCsymbolType**   const symPtrPtr,
+                              CSCmemListType    const memList,
+                              int                     memTag
+                              );
+
+RETURN VALUE
+        CSC_OK ....... successful
+
+        CSC_BADARG ... symPtrPtr or memList is NULL
+
+        CSC_ERROR .... other errors
+
+DESCRIPTION
+        CSCsymbolPtrDel() removes the pointer symbol whose pointer is pointed
+        to by `symPtrPtr'.
+
+BUGS
+        The name and value fields of the symbol structure are pointers and
+        CSCsymbolPtrDel() tries to deallocate them; therefore, don't create a
+        symbol with a statically allocated name or pointer.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

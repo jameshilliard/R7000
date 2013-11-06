@@ -1,0 +1,38 @@
+CSClistNodeDel(3)
+
+NAME
+        CSClistNodeDel - remove an entry (node) from a libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistNodeDel (
+                             CSClistType       const list,
+                             CSClistNodeType         node
+                             );
+
+RETURN VALUE
+        CSClistNodeDel(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        The list entry (node)specified by the opaque `node' is removed from
+        `list'.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)

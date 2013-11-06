@@ -1,0 +1,41 @@
+CSCsymbolDup(3)
+
+NAME
+        CSCsymbolDup - dynamically allocate and duplicate a symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCsymbolType*   CSCsymbolDup (
+                                      const CSCsymbolType*   const symPtr,
+                                            CSCmemListType   const memList,
+                                            int                    memTag
+                                      );
+
+RETURN VALUE
+        CSCsymbolDup(), if successful, returns a pointer to the newly created
+        symbol, otherwise NULL is returned.
+
+DESCRIPTION
+        CSCsymbolDup() dynamically allocates a symbol structure and copies the
+        symbol pointed to by `symPtr' into the new symbol.
+
+        The symbol's name is also dynamically allocated and copied.  To free
+        the newly created symbol's memory, the name field and the symbol
+        structure itself must be freed; use the appropriate CSCsymbol*Del()
+        function.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDel(3)

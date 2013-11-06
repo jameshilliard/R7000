@@ -1,0 +1,3 @@
+afpd-afp_asp.o: afp_asp.c ../../config.h
+
+../../config.h:

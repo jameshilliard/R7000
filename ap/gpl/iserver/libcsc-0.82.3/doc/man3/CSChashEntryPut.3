@@ -1,0 +1,49 @@
+CSChashEntryPut(3)
+
+NAME
+        CSChashEntryPut - put an entry into a libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSChashEntryPut (
+                              CSChashTableType   const hashTable,
+                              CSChashKeyUnion*   const keyPtr,
+                              void*              const itemPtr,
+                              size_t                   itemSize
+                              );
+
+RETURN VALUE
+        CSChashEntryPut(), if successful, returns CSC_OK.  If the key is
+        already in use in the table, then CSChashEntryPut() will return
+        CSC_DUPKEY.  Other values, CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can
+        be returned corresponding to NULL pointers, bad function arguments, and
+        internal data errors, respectively.
+
+DESCRIPTION
+        CSChashEntryPut() puts the data pointed to by `itemPtr', whose key is
+        pointed to by `keyPtr' and size in bytes is `itemSize', into the libcsc
+        hash table represented by the opaque `hashTable'.
+
+        The data that goes into the table is a duplicate of `itemSize' bytes
+        from the address `itemPtr'.  To avoid duplicating static data, put a
+        pointer of the client data into the table.  If the item being put into
+        the table contains a pointer, beware of aliasing errors if the pointer
+        is to allocated memory that becomes deallocated while the item is in the
+        table.
+
+        Of course, the type of the key pointed to by `keyPtr' must match the
+        type of keys (CSC_HASH_INT32_KEY or CSC_HASH_ASCIIZ_KEY) used by
+        `hashTable'.
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashEntryStat(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

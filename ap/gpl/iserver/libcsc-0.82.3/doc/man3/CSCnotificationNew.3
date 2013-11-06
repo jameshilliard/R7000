@@ -1,0 +1,46 @@
+CSCnotificationNew(3)
+
+NAME
+        CSCnotificationNew - create a new notification in a board
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCnotificationNew (
+                                       CSCnotificationBoardType   const board,
+                                 const char*                            name,
+                                       CSCgenFnType                     errfn
+                                 );
+
+RETURN VALUE
+        CSCnotificationNew(), if successful, CSC_OK; otherwise, CSC_NOTFOUND,
+        CSC_BADARG, and CSC_CORRUPT can be returned corresponding to NULL
+        pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCnotificationNew() creates a new notification entry and puts it into
+        notification `board'.
+
+        `name' points to the character string that names the new notification
+        entry.
+
+        `errfn' is a pointer to a libcsc CSCgenFnType function that is called
+        when a call to `post' a notification, CSCnotificationPost() (which
+        tries to distribute the notification), results in an an error.  The
+        prototype for `errfn' is:
+
+                int    (*CSCgenFnType) (int, int, void*);
+
+        The client callback error function `errfn' is called with the current
+        notification count and notification `name'; its return value is ignored:
+
+                (void)((*errfn) (0, count, name);
+
+SEE ALSO
+        CSCnotificationBoardNew(3)
+        CSCnotificationBoardDel(3)
+        CSCnotificationBoardPrint(3)
+        CSCnotificationDel(3)
+        CSCnotificationPost(3)
+        CSCnotificationRegister(3)

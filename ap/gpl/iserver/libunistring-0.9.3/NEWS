@@ -1,0 +1,27 @@
+New in 0.9.3:
+* Bug fixes in unistr.h functions:
+  - The functions u16_to_u32, u16_to_u8, u8_to_u32, u8_to_u16 now fail when
+    the argument is not valid. Previously, they returned a converted string
+    where invalid parts were each replaced with U+FFFD.
+  - The function u8_mbsnlen now counts an incomplete character at the end
+    of the argument string as 1 character. Previously, it could count as 2
+    or 3 characters.
+  - The return value of the u8_stpncpy, u16_stpncpy, u32_stpncpy functions
+    was incorrect.
+  - The u8_strcoll, u16_strcoll, u32_strcoll now try harder to give a non-zero
+    return value.
+* Portability to MacOS X 10.6 and Cygwin 1.7.
+
+New in 0.9.2:
+* The function uc_locale_language now uses the locale of the current thread,
+  if a thread-specific locale has been set.
+
+New in 0.9.1:
+* In the include file unicase.h, functions for case mapping of substrings have
+  been added.
+
+New in 0.9:
+* The new include file unicase.h implements case folding.
+* The new include file uninorm.h implements normalization.
+* The new include file uniwbrk.h implements word break determination.
+* The library source code is now part of gnulib.

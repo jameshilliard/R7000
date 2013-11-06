@@ -1,0 +1,70 @@
+CSCnotificationRegister(3)
+
+NAME
+        CSCnotificationRegister - register client function to a notification
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCnotificationRegister (
+                                    CSCnotificationBoardType   const board,
+                              const char*                            notifName,
+                              const char*                            clientName,
+                                    CSCgenFnType                     fn,
+                              const CSCboolean*                      runFlag,
+                                    int                              tag,
+                              const void*                            data
+                                      );
+
+RETURN VALUE
+        CSCnotificationRegister(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCnotificationRegister() registers the client function pointed to by
+        `fn' with the notification entry named by `notifName' in the
+        notification board associated with `board'.
+
+        Client functions are libcsc CSCgenFnType types; their prototype is:
+
+                int    (*CSCgenFnType) (int, int, void*);
+
+        The client functions are called with a notification count,
+        client-specified integer tag, and client-specified data (with which
+        they register):
+
+                (*fn) (count, tag, data);
+
+        Client functions should return CSC_OK or CSC_NOTOUND.  If CSC_NOTFOUND
+        is returned by a client function, then no more client functions
+        registered for the notification are called for the particular
+        notification action, and and the notification's error function,
+        pointed to by errfn, is called.  The error function, pointed to by
+        errfn, is associated with the notification entry when the notification
+        entry is created.  The error function's return value is ignored.
+
+        `clientName' is used only for debug messages and notification board
+        printing.
+
+        When the notification named `notifName' is posted to, the function
+        pointed to by `fn' is called.  `tag' and `data' are returned to the
+        client as arguments to the client function `fn'.
+
+        All client functions registered to a notification are called in order
+        of their priority.  `tag' is used as the priority; all the client
+        functions registered to a notification are called in the numerical
+        value order of their tag.
+
+        The client can dynamically control the calling of its registered
+        function; if the value at `runFlag' is CSC_FALSE when the notification
+        is posted to, then the registered client function will not be called.
+
+SEE ALSO
+        CSCnotificationBoardNew(3)
+        CSCnotificationBoardDel(3)
+        CSCnotificationBoardPrint(3)
+        CSCnotificationNew(3)
+        CSCnotificationDel(3)
+        CSCnotificationPost(3)

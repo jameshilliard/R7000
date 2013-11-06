@@ -1,0 +1,60 @@
+CSCbinTreeNodeStat(3)
+
+NAME
+        CSCbinTreeNodeStat - retrieve fields from a libcsc binary tree node
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCbinTreeNodeStat (
+                                 CSCbinTreeNodeType   const node,
+                                 CSCdataCntrlType*    const pushPtr,
+                                 long*                const tagPtr,
+                                 size_t*              const sizePtr,
+                                 void**               const dataPtrPtr
+                                 );
+
+RETURN VALUE
+        CSCbinTreeNodeStat() returns CSC_OK.  If libcsc was compiled with the
+        DEBUG macro and node is NULL, then CSCbinTreeNodeStat() returns
+        CSC_BADARG.  If libcsc was compiled with the DEBUG macro and some
+        internal tree data is munged up then CSCbinTreeNodeStat() returns
+        CSC_CORRUPT.
+
+DESCRIPTION
+        CSCbinTreeNodeStat() is used to get values of various fields from the
+        given libcsc binary tree node `node'.
+
+        if `pushPtr' is not NULL, then the value of the push field of `node' is
+        written to the CSCdataCntrlType pointed to by `pushPtr'.
+
+        if `tagPtr' is not NULL, then the value of the tag field of `node' is
+        written to the long pointed to by `tagPtr'.
+
+        if `sizePtr' is not NULL, then the value of the data size field of
+        `node' is written to the size_t pointed to by `sizePtr'.
+
+        if `dataPtrPtr' is not NULL, then the value of the data pointer field
+        `node' is written to the void pointer pointed to by `dataPtrPtr'.
+
+        If tagPtr, sizePtr, and dataPtrPtr are all NULL, then this function
+        does nothing interesting.
+
+SEE ALSO
+        CSCbinTreeNew(3)
+        CSCbinTreeDel(3)
+        CSCbinTreeInsert(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeUserSearch(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreeStat(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeTagSearch(3)
+        CSCbinTreeNodePrint(3)

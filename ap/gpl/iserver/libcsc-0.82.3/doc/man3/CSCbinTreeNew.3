@@ -1,0 +1,53 @@
+CSCbinTreeNew(3)
+
+NAME
+        CSCbinTreeNew - create an empty libcsc balanced binary tree
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCbinTreeType   CSCbinTreeNew (
+                                       const char*            namePtr,
+                                             CSCmonFnType     monFunc,
+                                       const void*            monData,
+                                             CSCprofileType   profiling
+                                       );
+
+RETURN VALUE
+        CSCbinTreeNew(), if successful, returns an opaque data type that
+        represents the newly created libcsc balanced binary tree, or NULL if
+        otherwise unsuccessful.
+
+DESCRIPTION
+        CSCbinTreeNew() creates and initializes a libcsc balanced binary tree
+        and returns a CSCbinTreeType; the data structure is opaque.
+
+        DANGER  Take care to never insert into a balanced binary tree a node
+                that was joined with another by using CSCbinTreeNodeJoin()
+                because it lacks balance information and will completely whack
+                a balanced tree.
+
+        DANGER  Never, never, never use CSCbinTreeNodeBreak() on a node in a
+                libcsc balanced binary tree.
+
+        In general:  do not try mixing the CSCbinTree and CSCbinTreeNode
+        functions on the same tree.
+
+SEE ALSO
+        CSCbinTreeDel(3)
+        CSCbinTreeInsert(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeUserSearch(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreeStat(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeTagSearch(3)
+        CSCbinTreeNodeStat(3)
+        CSCbinTreeNodePrint(3)

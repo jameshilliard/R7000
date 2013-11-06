@@ -1,0 +1,38 @@
+CSClistNodeValidate(3)
+
+NAME
+        CSClistNodeValidate - verify an entry (node) is really in a libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistNodeValidate (
+                                  CSClistType       const list,
+                                  CSClistNodeType   const node
+                                  );
+
+RETURN VALUE
+        CSClistNodeValidate(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistNodeValidate() looks up `node' in `list' to validate that `node'
+        is actually in `list'.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeDel(3)

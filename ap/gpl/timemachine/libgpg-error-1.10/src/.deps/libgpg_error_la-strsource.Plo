@@ -1,0 +1,13 @@
+libgpg_error_la-strsource.lo: strsource.c ../config.h gpg-error.h \
+ /projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h \
+ gettext.h err-sources.h
+
+../config.h:
+
+gpg-error.h:
+
+/projects/hnd/tools/linux/hndtools-arm-linux-2.6.36-uclibc-4.5.3/lib/gcc/arm-brcm-linux-uclibcgnueabi/4.5.3/include/stddef.h:
+
+gettext.h:
+
+err-sources.h:

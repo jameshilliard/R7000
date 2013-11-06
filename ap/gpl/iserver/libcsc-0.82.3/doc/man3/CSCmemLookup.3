@@ -1,0 +1,53 @@
+CSCmemLookup(3)
+
+NAME
+        CSCmemLookup - lookup a memory pointer in memList
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemLookup (
+                                 CSCmemListType   const memList,
+                           const void*                  memPtr,
+                                 size_t*          const sizePtr,
+                                 int*             const tagPtr
+                           );
+
+RETURN VALUE
+        CSC_OK ......... successful, memPtr was found in memList
+
+        CSC_NOTFOUND ... memPtr not found in memList, or memList has no
+                         allocated blocks
+
+        CSC_BADARG ..... memList or memPtr is NULL
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemLookup() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemLookup() looks up `memPtr' in `memList' to validate it, and if
+        found returns its statistics: size of the data block pointer to by
+        `memPtr' and the tag that was used to allocate the block of memory
+        pointed to by `memPtr'.
+
+        If `sizePtr' is not NULL, then the size of the allocated memory block
+        pointed to by `memPtr' is written to the size_t pointed to by `sizePtr'.
+
+        If `tagPtr' is not NULL, then the tag that was used to allocate the
+        block of memory pointed to by `memPtr' is written to the int pointed to
+        by `tagPtr'.
+
+        Either, or both, of `sizePtr' and `tagPtr' can be NULL. If both are
+        NULL, then CSCmemLookup() pretty much acts like CSCmemValidate().
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

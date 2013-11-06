@@ -1,0 +1,38 @@
+CSCsymtabEntryDel(3)
+
+NAME
+        CSCsymtabEntryDel - remove a symbol from a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymtabEntryDel (
+                                CSCsymTableType   const symTab,
+                                char*             const symName
+                                );
+
+RETURN VALUE
+        CSCsymtabEntryDel(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCsymtabEntryDel() removes the symbol entry specified by `symName'
+        from `symTab'.  The symbol in `symTab' whose name field contains
+        `symName' is removed.
+
+BUGS
+        Symbols not created by CSCsymbolFloatNew(), CSCsymbolIntNew(), and
+        CSCsymbolPtrNew() may cause problems.  (The name and value.pointer data
+        of the symbol should be dynamically allocated, and the valueFlag field
+        needs to be set the way CSCsymbolFloatNew(), CSCsymbolIntNew(), and
+        CSCsymbolPtrNew() set it.)
+
+SEE ALSO
+        CSCsymtabNew(3)
+        CSCsymtabDel(3)
+        CSCsymtabStat(3)
+        CSCsymtabEntryPut(3)
+        CSCsymtabEntryGet(3)
+        CSCsymtabEntryNext(3)

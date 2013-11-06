@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: libkqueue
+Description: Emulates FreeBSD kqueue(2) on other platforms
+Version: 1.0.6
+Requires: 
+Libs:  -L/usr/local/lib -lpthread -lrt -lkqueue 
+Libs.private:  -L/usr/local/lib -lpthread -lrt
+Cflags: -I${includedir}/kqueue 
+

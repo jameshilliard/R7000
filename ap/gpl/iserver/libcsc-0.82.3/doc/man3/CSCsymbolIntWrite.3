@@ -1,0 +1,34 @@
+CSCsymbolIntWrite(3)
+
+NAME
+        CSCsymbolIntWrite - write a integer symbol in ASCII format
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolIntWrite (
+                                const int                    fd,
+                                const CSCsymbolType*   const symPtr
+                                );
+
+RETURN VALUE
+        CSC_OK ....... always
+
+DESCRIPTION
+        CSCsymbolIntWrite() writes to fd the fields of the symbol in an ASCII
+        format.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolIntDel(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

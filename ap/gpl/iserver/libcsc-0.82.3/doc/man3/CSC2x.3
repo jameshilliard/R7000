@@ -1,0 +1,21 @@
+CSC2x(3)
+
+NAME
+        CSC2x - 2 to a the power of x, 0 <= x <= 30
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSC2x (
+                    int   exponent
+                    );
+
+RETURN VALUE
+DESCRIPTION
+        CSC2x() returns 2 to the power of exponent, unless exponent is less
+        than 0 or greater than 30, in which case CSC2x() returns -1.
+
+        CSC2x() uses a table, so it is extremly fast.
+
+SEE ALSO
+        CSCurand(3)

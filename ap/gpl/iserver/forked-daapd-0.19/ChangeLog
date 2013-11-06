@@ -1,0 +1,78 @@
+ChangeLog for forked-daapd
+--------------------------
+
+version 0.19:
+	- more libav 0.7 updates.
+	- database speedups.
+	- fix for iTunes 30-minute timeout.
+	- fixes, big and small.
+
+version 0.18:
+	- add config knob for ALSA mixer channel name.
+	- do not elevate privileges for reopening the log file; log file
+	  will now be owned by the user forked-daapd runs as.
+	- fixes, big and small.
+
+version 0.17:
+	- support for libav 0.7
+	- fixes, big and small.
+
+version 0.16:
+	- fix issue with non-UTF-8 metadata while scanning.
+	- use proper file size in HTTP streaming code.
+	- fix DAAP songlist bug with sort tags.
+	- small code fixes.
+
+version 0.15:
+	- add support for sending metadata to AppleTV during AirTunes streaming.
+	- support DOS-encoded Remote pairing files.
+	- rework album_artist_sort handling.
+	- enable RAOP to queue RTSP requests.
+	- speedup DAAP & RSP filters processing.
+	- speedup DAAP songlist generation.
+	- artwork can handle and send out both PNG and JPEG.
+	- fixes, big and small.
+
+version 0.14:
+	- sort headers/tags handling improvements.
+	- better handling of tags for TV shows.
+	- better handling of DRM-afflicted files.
+	- configurable IPv6 support.
+	- fix scanning of URL files.
+	- fixes, big and small.
+
+version 0.13:
+	- add Remote v2 support; Remote v1 is not supported anymore.
+	- add per-speaker volume support.
+	- implement RAOP retransmission.
+	- implement per-device quirks in RAOP.
+	- improve compatibility with 802.11g AirPort Express.
+	- improve mDNS address resolution, making IPv4 usable again.
+	- fix Murmur Hash bug on 32bit platforms.
+	- add support for JPEG artwork and alternative filenames.
+	- disable session expiration that was causing issues.
+	- FFmpeg 0.6 support.
+	- fixes, big and small.
+
+version 0.12:
+	- add AirTunes v2 streaming.
+	- add Remote support.
+	- add gzipped replies.
+	- add IPv6 support.
+	- check for UTF-8 correctness of metadata.
+	- fixes, big and small.
+
+version 0.11:
+	- support iTunes 9.
+	- add iTunes XML playlist scanner.
+	- add support for TV shows.
+	- add FreeBSD and GNU/kFreeBSD support.
+	- add support for DAAP groups.
+	- add support for artwork.
+	- rework metdata extraction, better support for ID3 tags.
+	- database code rework.
+	- preliminary support for Remote (pairing, browsing).
+	- fixes, big and small.
+
+version 0.10:
+	- initial release.

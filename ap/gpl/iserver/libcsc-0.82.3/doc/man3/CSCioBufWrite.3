@@ -1,0 +1,46 @@
+CSCioBufWrite(3)
+
+NAME
+        CSCioBufWrite - write an ASCII buffer
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCioBufWrite (
+                                  int      fd,
+                            const void*    dataPtr,
+                                  size_t   size
+                            );
+
+RETURN VALUE
+        CSC_OK ....... successful
+
+        CSC_BADARG ... fd is zero, dataPtr is NULL, or size is zero
+
+        CSC_ERROR .... write error
+
+DESCRIPTION
+        CSCioBufWrite() converts the size_t value of `size' to an ASCII string
+        and writes this to `fd', followed by a newline. Then, `size' bytes,
+        starting at `dataPtr', are each converted to two ASCII characters (a
+        standard "bin to hex" conversion) and written to `fd', followed by a
+        newline.
+
+        Use CSCioBufWrite() and CSCioBufRead() to store and retrieve arbitrary
+        binary data in portable ASCII format.
+
+EXAMPLE
+        int   data = 0x12FACE55;
+
+        stat = rtsIObufWrite (fd, &data, sizeof(int));
+
+        // Written to fd (no NULL character sent): "4\n12FACE55\n"
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufRead(3)

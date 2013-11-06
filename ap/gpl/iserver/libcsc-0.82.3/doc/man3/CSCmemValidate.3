@@ -1,0 +1,38 @@
+CSCmemValidate(3)
+
+NAME
+        CSCmemValidate - validate that a memory pointer is in memList
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemValidate (
+                                   CSCmemListType   const memList,
+                             const void*                  memPtr
+                             );
+
+RETURN VALUE
+        CSC_OK ......... successful, memPtr was found in memList
+
+        CSC_NOTFOUND ... memPtr not found in memList, or memList has no
+                         allocated blocks
+
+        CSC_BADARG ..... memList is or memPtr NULL
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemValidate() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemValidate() looks up `memPtr' in `memList' to validate it.
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

@@ -1,0 +1,23 @@
+CSCsysUsleep(3)
+
+NAME
+        CSCsysUsleep - sleep some microseconds (rounded to kernel capability)
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCsysUsleep (
+                            const size_t   microseconds
+                            );
+
+RETURN VALUE
+        CSCsysUsleep() has no return value.
+
+DESCRIPTION
+        The calling process/task will block for microseconds.  The actual time
+        blocked will be descretized to the granularity implemented by the
+        kernel.
+
+SEE ALSO
+        CSCsysInstallSignal(3)
+        CSCsysLimitsGet(3)

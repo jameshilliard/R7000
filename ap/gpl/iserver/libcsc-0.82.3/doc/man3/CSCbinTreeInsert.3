@@ -1,0 +1,84 @@
+CSCbinTreeInsert(3)
+
+NAME
+        CSCbinTreeInsert - insert a node into a libcsc balanced binary tree
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCbinTreeInsert (
+                               CSCbinTreeType       const tree,
+                               CSCbinTreeNodeType   const node,
+                               CSCcmpFnType               cmpfn
+                               );
+
+RETURN VALUE
+        CSC_OK ........ if successful.
+
+        CSC_DUPKEY .... if `node' already exists in `tree'; this is defined
+                        by the value of tree nodes' tags and is discerned by
+                        the client callback function pointed to by `cmpfn'.
+
+        CSC_BADARG .... if libcsc was compiled with the DEBUG macro and
+                        `tree', `node', or `cmpfn' is NULL.
+
+        CSC_CORRUPT ... if libcsc was compiled with the DEBUG macro and
+                        CSCbinTreeInsert() detects something munged up in the
+                        tree or in some internal data.
+
+DESCRIPTION
+        CSCbinTreeInsert() inserts `node' into the libcsc balanced binary tree
+        `tree', and then maintains the balance.
+
+        DANGER  Take care to never insert a node that was joined with another
+                with CSCbinTreeNodeJoin() because it lacks balance information
+                and will completely whack a balanced tree.
+
+        `cmpfn' is a pointer to a libcsc CSCcmpFnType function that is called
+        for each node in the tree, until the node pointed to by node is
+        inserted.  The prototype for `cmpfn' is:
+
+                int    (*cmpfn) (void*, void*);
+
+        The client callback function `cmpfn' is called to compare the tag
+        field values of the node at node with a node, P, in the tree (note
+        the actual arguments are the addresses of the tag fields):
+
+                (*cmpfuncptr) ((void*)&node->tag, (void*)&P->tag);
+
+        This gives the client control over the insertion order.  The
+        CSCcmpFnType function should return only the values -1, 0, and 1:
+
+                -1 .... indicates less than (new node goes into left subtree).
+                 0 .... indicates a duplicate.
+                 1 .... indicates more than (new node goes into right subtree).
+
+        The tag field of libcsc balanced binary tree nodes is a long, but its
+        semantics are entirely up to the client.
+
+        Insertion metrics, count comparisons and subtree rotations, can be
+        gotten with CSCbinTreeStat().
+
+CREDITS
+        The balanced tree insertion algorithm is directly taken from Donald E.
+        Knuth, "Sorting and Searching," The Art of Computer Programming, vol. 3
+        (Reading Mass.:  Addison-Wesley 1973).
+
+SEE ALSO
+        CSCbinTreeNew(3)
+        CSCbinTreeDel(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeUserSearch(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreeStat(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeTagSearch(3)
+        CSCbinTreeNodeStat(3)
+        CSCbinTreeNodePrint(3)

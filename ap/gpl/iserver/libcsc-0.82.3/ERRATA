@@ -1,0 +1,291 @@
+--------------------        
+libcsc-0.82.2 ERRATA        
+--------------------
+
+
+
+================================================================================
+Bugs & Limitations
+================================================================================
+
+1.	There is no way remove nodes from binary trees.
+
+2.	Some of the libc functions called in csc_file.c may leak memory.
+
+
+
+================================================================================
+To Do
+================================================================================
+
+1.	I might want to do something like this in the hash table subsystem:
+		- Use a list of prime numbers to grow the growable hash table.
+
+2.	csc_file.c - find a file in a `:' separated list of paths.
+
+
+
+================================================================================
+Change Log
+================================================================================
+
+##### Changes in libcsc version 0.82.3 (25mar03):
+      for Rene Reitinger
+
+New Functionality:
+- None.
+
+Bugs Fixed:
+- fixed "debug" target of makefile (Makefile.src).
+- fixed memory allocation error in CSChashNew() (csc_hash.c).
+- improved argument usage in CSChashNew() (csc_hash.c).
+
+Things otherwise different:
+- None.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.82.2 (23mar03):
+      for Rene Reitinger
+
+New Functionality:
+Bugs Fixed:
+- added a CSCmemListType argument to CSChashEntryGet() (csc_hash.c).
+- added a CSCmemListType argument to CSCsymtabEntryGet() (csc_symtab.c).
+
+Things otherwise different:
+- Fixed compile warnings:
+  o Added #include <string.h> to config-main.c
+  o Added #include <string.h> to csc_io.c
+  o Added #include <string.h> to csc_mem.c
+  o Added #include <string.h> to csc_notify.c
+  o Added #include <string.h> to csc_symbol.c
+  o Added #include <string.h> to csc_timer.c
+  o Added #include <stdlib.h> to xcsc_debug.c
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.82.1 (06nov02):
+
+New Functionality:
+- None.
+
+Bugs Fixed:
+- fixed bug in the retreival of CSC_DATA_DUP data in CSClistPop().
+- fixed bug in the CSC_LIST_TAIL traversal of a list in CSClistNodeNext().
+
+Things otherwise different:
+- None.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.82.0 (12may02):
+
+New Functionality:
+- None.
+
+Bugs Fixed:
+- fixed buggy monitor function usage in csc_list.c
+
+Things otherwise different:
+- updated dates in comments and messages (csc_config.c)
+- fixed compiler warnings (Makefile.src csc_mem.c csc_sys.c csc_timer.c)
+- moved `#include <sys/time.h>' from libcsc.h to csc_sys.c and csc_timer.c
+- changed some __sun__ c-switching to SOLARIS (csc_sock.c)
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.81.0 (02may02):
+
+        ****************************************************************
+        *                                                              *
+        * libcsc is changed in some fundemental ways. Basically, it is *
+        * (I hope) usable in a multithreaded environment.              *
+        *                                                              *
+        * There are many changes. The API is somewhat different. Many  *
+        * functions and entire subsystems are simpler in some ways.    *
+        *                                                              *
+        * Files and functions are all renamed.                         *
+        * Not all the previous functions are still present.            *
+        *                                                              *
+        * I almost called this libcsc2.                                *
+        *                                                              *
+        ****************************************************************
+
+- _everything_ is now prefixed with CSC, not rts.
+- added multi-threading support via monitor functions
+- removed rtsStringBustup() and rtsStringBustupDone() functions
+- removed pdq stuff
+- removed support of HP-UX (c-switching)
+- mostly removed explicit embedded/vxworks support
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.80.0 (11jun01):
+
+New Functionality:
+- added new rtsStringBustup() and rtsStringBustupDone() functions (rtsString.c)
+
+Bugs Fixed:
+- None.
+
+Things otherwise different:
+- None.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.75.1 (25jun00):
+
+New Functionality:
+- added new cscFileUnLock() function (cscUNIXfile.c)
+
+Bugs Fixed:
+- None.
+
+Things otherwise different:
+- None.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.75.0 (14may00):
+
+	*********************************************************
+	* CHANGED ALL OPAQUE TYPES IN:				*
+	*	- rtsMem* functions (rtsMem.c, rts.h) 	        *
+	*********************************************************
+
+New Functionality:
+- added new rtsMemHasProfile() function (rtsMem.c)
+
+Bugs Fixed:
+- fixed memory leak in rtsNotificationBoardDel (rtsNotify.c)
+- fixed several functions to return RTS_BADARG from csc_assert() (rtsNotify.c)
+- fixed rtsBinTreePrint() to return RT_ERROR for bad signature (rtsBinTree.c)
+
+Things otherwise different:
+- slightly upgraded documentation in libcsc/doc and libcsc/man
+- compile with RTS_ENABLE_MEM_PROFILE to enable reference checking (rtsMem.c)
+  o this should fix reentrancy problems
+- compile with DEBUG to enable signature validation (rtsMem.c)
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.7.0 (28/4/00):
+
+	*********************************************************
+	* CHANGED ALL OPAQUE TYPES IN:				*
+	*	- rtsNotify* functions (rtsNotify.c, rts.h) 	*
+	*	- rtsList* functions (rtsList.c, rts.h) 	*
+	*	- rtsHash* functions (rtsHash.c, rts.h) 	*
+	*	- rtsBinTree* functions (rtsBinTree.c, rts.h) 	*
+	*********************************************************
+
+New Functionality:
+- added more statistics for hash tables (rtsHash.c)
+
+Bugs Fixed:
+- added/fixed/removed debug messages in several list functions (rtsList.c)
+- fixed rtsIO.c to use rtsMemFree() instead of free() (rtsIO.c)
+- fixed rebuilding of growing hash tables (rtsHash.c)
+- fixed memory deallocation bugs (rtsHash.c)
+- fixed rtsHashEntryGet() to properly write retreived data (rtsHash.c)
+
+Things otherwise different:
+- changed the prototype of the list find functions (rtsList.c, rts.h)
+- added `bias' argument to rtsListEntryFindByReference() (rtsList.c, rts.h)
+- added `bias' argument to rtsListEntryFindByValue() (rtsList.c, rts.h)
+- new documentation in libcsc/doc and libcsc/man
+- added an example/test hash table program trtshash in libcsc/t
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.4.2:
+
+New Functionality:
+- added rtsBinTreeNodeBreak {inverse of rtsBinTreeNodeJoin} (rtsBinTree.[ch])
+- added more output text to rtsHashWrite (rtsHash.c)
+- added more fields in rtsSymbolType (rts.h)
+- added rtsSymbolDup (rtsSymbol.c, rts.h)
+
+Bugs Fixed:
+- fixed up rtsHashEntryPut(): address operator missing (rtsHash.c).
+- fixed up rtsHashEntryNext(): bad return value (rtsHash.c)
+- fixed up rtsHashDel() inner loop problem (rtHash.c)
+- fixed up rtsHashWrite() to not crash with empty hash tables (rtsHash.c)
+- Fixed up rtsHashNew(): zero size indicates growing hash table (rtsHash.c)
+- Fixed rtsSymTabEntryPut() bug in hash table insertion (rtsSymTab.c)
+- Fixed rtsSymTabEntryNext() bug at end of symbol table (rtsSymTab.c)
+- Fixed rtsSymTabEntryGet() bug in hash table getting (rtsSymTab.c)
+- Plugged symbol memory leaking (rtsSymTab.c)
+
+Things otherwise different:
+- None.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.4.1:
+
+New Functionality:
+- None.
+
+Bugs Fixed:
+- None.
+
+Things otherwise different:
+- Fixed up some makefiles and documentation.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.4.0:
+
+New Functionality:
+
+Bugs Fixed:
+- fixed coding error (missing '}') in pdq_VXWORKStask.c.
+
+Things otherwise different:
+- modified c-switching; removed the upper-level Makefile.src.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.3.0:
+
+New Functionality:
+
+Bugs Fixed:
+
+Things otherwise different:
+- added c-switched for header files, prototypes, etc. for HP-UX 10.20 compiling.
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.2.1:
+
+New Functionality:
+- added pdq_shmRip (pdq_UNIXshm.c, pdq_VXWORKSshm.c, pdq.h)
+- added pdq_shmDataPtr (pdq_UNIXshm.c, pdq_VXWORKSshm.c, pdq.h)
+
+Bugs Fixed:
+
+Things otherwise different:
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.2:
+
+New Functionality:
+- added pdq_shmIsAttached (pdq_UNIXshm.c, pdq_VXWORKSshm.c, pdq.h)
+- added explicit values to all enumeration in (csc.h)
+
+Bugs Fixed:
+- fixed assertion string (pdq_UNIXshm.c);
+- fixed dptr field usage for attach/detach (pdq_UNIXshm.c, pdq_VXWORKSshm.c)
+
+Things otherwise different:
+- changed from gcc to egcs (Makefile.src.unix)
+
+-------------------------------------------------------------------------------
+
+##### Changes in libcsc version 0.1:
+
+(initial version)

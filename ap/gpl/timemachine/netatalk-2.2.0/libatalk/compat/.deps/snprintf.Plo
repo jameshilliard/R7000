@@ -1,0 +1,3 @@
+snprintf.lo: snprintf.c ../../config.h
+
+../../config.h:

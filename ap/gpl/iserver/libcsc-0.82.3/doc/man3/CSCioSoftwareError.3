@@ -1,0 +1,41 @@
+CSCioSoftwareError(3)
+
+NAME
+        CSCioSoftwareError - print a parameterized software error message
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCioSoftwareError (
+                                  const char*   identPtr,
+                                  const char*   csciPtr,
+                                  const char*   fmtPtr,
+                                  ...
+                                  );
+
+RETURN VALUE
+        CSCioSoftwareError() returns no value.
+
+DESCRIPTION
+        CSCioSoftwareError() is a utility function that prints a software error
+        message with `csciPtr' being the name of the program, `identPtr' being a
+        version description. `fmtPtr' is a printf() style format string, the
+        last arguments, if any, are format items.
+
+        The message will look something like this:
+
+<csci>-ERROR-softwareError: INTERNAL SOFTWARE ERROR.
+<fmt+items>
+        -- Please report this to the maintainer(s) of <csci>.
+        -- Please include the command-line invocation of, the conditions under
+        -- which this error happened, and the following version description:
+        <ident>
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

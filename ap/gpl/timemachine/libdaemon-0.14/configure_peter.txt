@@ -1,0 +1,177 @@
+configure: loading cache config.cache
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for mipsel-strip... no
+checking for strip... strip
+configure: WARNING: using cross tools not prefixed with host triplet
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for mipsel-gcc... mipsel-linux-uclibc-gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether mipsel-linux-uclibc-gcc accepts -g... yes
+checking for mipsel-linux-uclibc-gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of mipsel-linux-uclibc-gcc... gcc3
+checking for mipsel-linux-uclibc-gcc option to accept ISO C99... unsupported
+checking whether mipsel-linux-uclibc-gcc and cc understand -c and -o together... yes
+checking how to run the C preprocessor... mipsel-linux-uclibc-gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking build system type... mipsel-uclibc-linux-gnu26
+checking host system type... mipsel-unknown-elf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by mipsel-linux-uclibc-gcc... /projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/usr/bin/mipsel-linux-uclibc-ld
+checking if the linker (/projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/usr/bin/mipsel-linux-uclibc-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... no
+checking for mipsel-dumpbin... no
+checking for mipsel-link... no
+checking for dumpbin... no
+checking for link... link -dump -symbols
+checking the name lister (link -dump -symbols) interface... BSD nm
+checking the maximum length of command line arguments... 1966080
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/usr/bin/mipsel-linux-uclibc-ld option to reload object files... -r
+checking for mipsel-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for mipsel-ar... no
+checking for ar... ar
+checking for mipsel-strip... strip
+checking for mipsel-ranlib... no
+checking for ranlib... ranlib
+checking command to parse link -dump -symbols output from mipsel-linux-uclibc-gcc object... failed
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if mipsel-linux-uclibc-gcc supports -fno-rtti -fno-exceptions... no
+checking for mipsel-linux-uclibc-gcc option to produce PIC... -fPIC -DPIC
+checking if mipsel-linux-uclibc-gcc PIC flag -fPIC -DPIC works... yes
+checking if mipsel-linux-uclibc-gcc static flag -static works... yes
+checking if mipsel-linux-uclibc-gcc supports -c -o file.o... yes
+checking if mipsel-linux-uclibc-gcc supports -c -o file.o... (cached) yes
+checking whether the mipsel-linux-uclibc-gcc linker (/projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/usr/bin/mipsel-linux-uclibc-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking if mipsel-linux-uclibc-gcc supports -pipe flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wall flag... yes
+checking if mipsel-linux-uclibc-gcc supports -W flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wextra flag... yes
+checking if mipsel-linux-uclibc-gcc supports -pedantic flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wformat flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wold-style-definition flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wdeclaration-after-statement flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wfloat-equal flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wmissing-declarations flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wmissing-prototypes flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wstrict-prototypes flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wredundant-decls flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wmissing-noreturn flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wshadow flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wendif-labels flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wpointer-arith flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wbad-function-cast flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wcast-qual flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wcast-align flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wwrite-strings flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Winline flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wno-unused-parameter flag... yes
+checking if mipsel-linux-uclibc-gcc supports -Wstrict-aliasing flag... yes
+checking whether to enable assertions... yes
+checking for ANSI C header files... (cached) yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for working volatile... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... cross
+configure: WARNING: result yes guessed because of cross compilation
+checking for working vfork... (cached) yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for vprintf... yes
+checking for _doprnt... no
+checking for select... yes
+checking for strerror... yes
+checking for dup2... yes
+checking for memset... yes
+checking for strrchr... yes
+checking for asprintf... yes
+checking for mode_t... yes
+checking whether setpgrp takes no argument... (cached) yes
+checking return type of signal handlers... void
+checking for size_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking if mipsel-linux-uclibc-gcc supports -Wl,--no-undefined flag... yes
+checking for lynx... no
+configure: WARNING: *** lynx not found, plain text README will not be built ***
+configure: updating cache config.cache
+configure: creating ./config.status
+config.status: creating libdaemon/Makefile
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/README.html
+config.status: creating doc/doxygen.conf
+config.status: creating examples/Makefile
+config.status: creating pkgconfig/libdaemon.pc
+config.status: creating pkgconfig/libdaemon-uninstalled.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands

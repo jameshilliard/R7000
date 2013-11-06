@@ -1,0 +1,42 @@
+CSCbinTreeNodeTagSearch(3)
+
+NAME
+        CSCbinTreeNodeTagSearch - search a libcsc binary tree for a given tag
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCbinTreeNodeType   CSCbinTreeNodeTagSearch (
+                                                CSCbinTreeNodeType   const node,
+                                                long                       tag
+                                                     );
+
+RETURN VALUE
+        CSCbinTreeNodeTagSearch(), if successful, returns a CSCbinTreeNodeType
+        that is the node whose tag-field value is equal to tag, or NULL if
+        otherwise not successful.
+
+DESCRIPTION
+        CSCbinTreeNodeTagSearch() searches `node', and recursively all of its
+        children, for a node with a tag-field that is equal to `tag'.
+
+        A recursive postfix tree traversal algorithm is used.
+
+SEE ALSO
+        CSCbinTreeNew(3)
+        CSCbinTreeDel(3)
+        CSCbinTreeInsert(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeUserSearch(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreeStat(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeStat(3)
+        CSCbinTreeNodePrint(3)

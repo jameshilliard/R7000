@@ -1,0 +1,15 @@
+# libmnl pkg-config file
+
+prefix=/tmp/wlanswbuild/hwnbuild/AARDVARK_REL_6_30_163_30/linux-2.6.36-arm-external-vista-router-partial-src_130228_0/components/opensource/netfilter/libmnl/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libmnl
+Description: Minimalistic Netlink communication library
+URL: http://netfilter.org/projects/libmnl/
+Version: 1.0.3
+Requires:
+Conflicts:
+Libs: -L${libdir} -lmnl
+Cflags: -I${includedir}

@@ -1,0 +1,45 @@
+CSCioReadLine(3)
+
+NAME
+        CSCioReadLine - read bytes that are terminated by a newline
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCioReadLine (
+                            int                    fd,
+                            char**           const bufPtrPtr,
+                            CSCmemListType   const memList,
+                            int                    tagData
+                            );
+
+RETURN VALUE
+        CSCioReadLine(), when successful, returns the number of bytes read
+        from `fd'.
+
+        CSCioReadLine() indicates error by returning -1. Errors are: `fd' is
+        zero or `bufPtrPtr' is NULL, read error, or memory allocation error.
+
+DESCRIPTION
+        CSCioReadLine() reads bytes from `fd' until a newline character is
+        encountered. The bytes are stored in a single dynamically allocated
+        buffer; the pointer to the buffer is returned to the caller by writing
+        the pointer to *bufPtrPtr.
+
+        NOTE    Since the buffer is dynamically allocated with CSCmemAlloc(),
+                the caller must free *bufPtrPtr with CSCmemFree() or
+                CSCmemListFree() to avoid a memory leak.
+
+        The terminating newline (maybe just LF or maybe CRLF) is in the returned
+        data.
+
+        `memList' and `tag' are as use with CSCmemAlloc().
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

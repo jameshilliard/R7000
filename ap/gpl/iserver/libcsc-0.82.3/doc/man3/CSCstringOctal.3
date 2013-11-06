@@ -1,0 +1,36 @@
+CSCstringOctal(3)
+
+NAME
+        CSCstringOctal - format an ASCII string to represent an octal number
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCstringOctal (
+                               char*   const bufPtr,
+                               int32         item
+                               );
+
+RETURN VALUE
+        CSCstringOctal() always returns bufPtr.
+
+DESCRIPTION
+        If `bufPtr' is not NULL, then the integer value of `item', in octal, is
+        written to bufPtr with a preceding "0o" and is represented in 11 octets
+        with the preceding two "0o" characters and terminating '\0' for a total
+        of 14 characters.
+
+EXAMPLE
+        char*   buf[14]; // no smaller! and bigger is a waste.
+        int32   i = 72;
+
+        (void)CSCstringOctal (buf, i);
+        //
+        // Now: buf = "0o00000000110"
+
+BUGS
+        Beware buffer overflows; they are your responsibility.
+
+SEE ALSO
+        CSCstringBinary(3)
+        CSCstringBasename(3)

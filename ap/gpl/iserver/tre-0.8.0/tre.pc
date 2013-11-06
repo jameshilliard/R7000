@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: TRE
+Description: TRE regexp matching library
+Version: 0.8.0
+Libs: -L${libdir} -ltre -L$(SRC_PATH)/build/lib  
+Cflags: -I${includedir} -I$(SRC_PATH)/build/include

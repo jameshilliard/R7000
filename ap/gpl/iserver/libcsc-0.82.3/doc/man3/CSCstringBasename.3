@@ -1,0 +1,49 @@
+CSCstringBasename(3)
+
+NAME
+        CSCstringBasename - strip directory from a filename
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCstringBasename (
+                                  char**   const pathPtrPtr
+                                  );
+
+RETURN VALUE
+        CSCstringBinary() returns a pointer to the filename component of the
+        pathname at *pathPtrPtr, if successful. Otherwise, CSCstringBinary()
+        returns NULL, particularly if pathPtrPtr, or *pathPtrPtr is NULL.
+
+DESCRIPTION
+        CSCstringBinary() finds the first character after the last '/' character
+        in the pathname pointed to by *pathPtrPtr. The last '/' character in the
+        original string is replace will a NULL character.
+
+        If the original pathname pointed to by *pathPtrPtr contains no '/'
+        character, then CSCstringBinary() returns *pathPtrPtr, and sets
+        *pathPtrPtr to be a pointer to the string "." (the current directory).
+
+EXAMPLE
+        char*   pathname = "just.a.file.name";
+        file = CSCstringBasename (&pathname);
+
+        // Now we have:
+        //      file = "just.a.file.name"
+        //      pathname = "."
+
+        char*   pathname = "path/file";
+        file = CSCstringBasename (&pathname);
+
+        // Now we have:
+        //      file = "file" ----v
+        //      pathname = "path\0file"
+
+BUGS
+        If the original string has a '/' character, then that character gets
+        set to '\0'; don't try this on components of argv and other strings
+        that might not be writable.
+
+SEE ALSO
+        CSCstringOctal(3)
+        CSCstringBinary(3)

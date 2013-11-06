@@ -1,0 +1,29 @@
+CSCnotificationBoardPrint(3)
+
+NAME
+        CSCnotificationBoardPrint - print a notification board in ASCII format
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCnotificationBoardPrint (
+                                         CSCnotificationBoardType   const board
+                                         );
+
+RETURN VALUE
+        CSCnotificationBoardPrint() has no return value.
+
+DESCRIPTION
+        CSCnotificationBoardPrint() prints to standard output the libcsc
+        notification board represented by the opaque `board' in an ASCII format.
+
+BUGS
+        There is no error check in this function.  Lame.
+
+SEE ALSO
+        CSCnotificationBoardNew(3)
+        CSCnotificationBoardDel(3)
+        CSCnotificationNew(3)
+        CSCnotificationDel(3)
+        CSCnotificationPost(3)
+        CSCnotificationRegister(3)

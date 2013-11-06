@@ -1,0 +1,57 @@
+CSClistPop(3)
+
+NAME
+        CSClistPop - pop an entry from a libcsc list and retrieve its data
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistPop (
+                         CSClistType       const list,
+                         CSClistBiasType         bias,
+                         void**            const itemPtrPtr,
+                         size_t*           const itemSizePtr
+                         );
+
+RETURN VALUE
+        CSClistPop(), if successful, returns CSC_OK; otherwise, CSC_NOTFOUND,
+        CSC_BADARG, and CSC_CORRUPT can be returned corresponding to NULL
+        pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistPop() pop the head (newest) or tail (oldest) entry from `list'
+        depending upon the value of `bias'.  Valid values of `bias':
+
+                CSC_LIST_HEAD   pop the head (newest) entry.
+
+                CSC_LIST_TAIL   pop the tail (oldest) entry.
+
+        The entry is removed from `list', and its data is retrieved.
+
+        If `itemPtrPtr' is not NULL, then the popped entry's data pointer is
+        written to the void pointer that is pointed to by `itemPtrPtr'.
+
+        NOTE    If the retreived data was pushed into the list with the push
+                type of CSC_DATA_DUP, then the retreived data is dynamically
+                allocated (with malloc(), calloc(), etc.) and the caller is
+                responsible for freeing (with free()) the retreived data.
+
+        If `itemSizePtr' is not NULL, then the popped entry's data size is
+        written to the size_t that is pointed to by `itemSizePtr'.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

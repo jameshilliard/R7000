@@ -1,0 +1,41 @@
+CSClistNew(3)
+
+NAME
+        CSClistNew - create a new libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSClistType   CSClistNew (
+                                 const char*            name,
+                                       CSCmonFnType     monFunc,
+                                 const void*            monData,
+                                       CSCprofileType   profiling
+                                 );
+
+RETURN VALUE
+        CSClistNew(), if successful, returns an opaque CSClistType, or NULL
+        if otherwise not successful.
+
+DESCRIPTION
+        CSClistNew() creates a new list.
+
+        `profiling' can be CSC_DO_PROFILING or CSC_NO_PROFILING; it specifies
+        whether alocate/free statistics should actually be generated and kept
+        in the list.
+
+SEE ALSO
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

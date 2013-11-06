@@ -1,0 +1,29 @@
+CSCtimerClear(3)
+
+NAME
+        CSCtimerClear - clear marks in timer
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCtimerClear (
+                            CSCtimerType   const timer
+                            );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_BADARG .... timer is NULL
+
+        CSC_CORRUPT ... corruption is detected in timer
+                        and CSCtimerClear() is compiled with DEBUG
+
+DESCRIPTION
+        CSCtimerClear() clears marks (and all the stats) in `timer'.
+
+SEE ALSO
+        PRtimerInit(3)
+        PRtimerDone(3)
+        PRtimerMark(3)
+        PRtimerDiff(3)
+        PRtimerStat(3)

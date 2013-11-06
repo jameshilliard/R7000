@@ -1,0 +1,48 @@
+CSCsymtabNew(3)
+
+NAME
+        CSCsymtabNew - create a new libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCsymTableType   CSCsymtabNew (
+                                       const char*          const name,
+                                             size_t               size,
+                                       const char**               keyWords,
+                                             int                  keyWordSpec,
+                                             CSCmonFnType         monFunc,
+                                       const void*                monData,
+                                             CSCprofileType       profiling
+                                       );
+
+RETURN VALUE
+        CSCsymtabNew(), if successful, returns an opaque data type
+        representing a new libcsc symbol table, or NULL if otherwise not
+        successful.
+
+DESCRIPTION
+        CSCsymtabNew() creates a new libcsc symbol table of `size' entries, and
+        initialized with a set of keywords.
+
+        `name' points to an arbitrary string that is used as the name of the
+        new libcsc symbol table.
+
+        If `size' is zero, then a default size is used.  Since the symbol table
+        is implemented as a hash table, the number of entries can be larger
+        than size.
+
+        If `keyWords' is NULL, then no keywords are loaded.  Otherwise, keyWords
+        is an array of character pointers; a symbol is created and put into the
+        new table for each keyword.  A list of keywords is terminated by a
+        keyword of zero length, not a NULL keyword pointer.
+
+        `keyWordType' is the value used for the keyword symbols' type field.
+
+SEE ALSO
+        CSCsymtabDel(3)
+        CSCsymtabStat(3)
+        CSCsymtabEntryPut(3)
+        CSCsymtabEntryGet(3)
+        CSCsymtabEntryDel(3)
+        CSCsymtabEntryNext(3)

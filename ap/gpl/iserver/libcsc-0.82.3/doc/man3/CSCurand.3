@@ -1,0 +1,43 @@
+CSCurand(3)
+
+NAME
+        CSCurand - uniform random number generator
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCurand (
+                       int       y,
+                       double*   dptr
+                       );
+
+RETURN VALUE
+        urand() returns a random int.
+
+DESCRIPTION
+        Urand is a Uniform/Universal RANDom number generator.
+
+        The integer argument y should be initialized to some arbitrary non-zero
+        number prior to the first call to CSCurand.
+
+        Function CSCurand takes the form:  f(x) = a(x) + c(modulo m)
+
+        m is 2 to the power of t for t-bit integers.  X, a, and c are
+        themselves integers in the same range.  Some choices of a and c are
+        good; urand chooses values suggested by Knuth (1969).  The scale factor
+        that is used for converting y to a floating point value in the interval
+        (0,1) is s = (double) 0.5 / halfm.
+
+        CSCurand is taken from George E. Forsythe, Michael A. Malcolm, and Cleve
+        B. Moler, "Computer Methods for Mathematical Programming" (Englewood
+        Cliffs: Prentice Hall, 1977), 246.
+
+        CSCurand is based on theory and suggestions given in Donald E. Knuth
+        "Seminumerical Algorithms," The Art of Computer Programming, vol. 2
+        (Reading Mass.:  Addison-Wesley 1969).
+
+BUGS
+        Using CSCurand() always seems too difficult.
+
+SEE ALSO
+        CSC2x(3)

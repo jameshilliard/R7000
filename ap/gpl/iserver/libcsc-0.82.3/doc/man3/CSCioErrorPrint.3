@@ -1,0 +1,38 @@
+CSCioErrorPrint(3)
+
+NAME
+        CSCioErrorPrint - formatted write to stderr
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCioErrorPrint (
+                               const char*   cscPtr,
+                               const char*   csuPtr,
+                               const char*   fmtPtr,
+                               );
+
+RETURN VALUE
+        CSCioErrorPrint() returns no value.
+
+DESCRIPTION
+        CSCioErrorPrint() is a front end, or wrapper, around fprintf() to
+        standard error. Before printing the typical formatted string,
+        CSCioErrorPrint() prints a string with `csc' and `csu':
+        "<csc>-ERROR-<csu>: ".
+
+EXAMPLE
+        stat = 55;
+        (void)CSCioErrorPrint ("CSCio", "CSCioBufRead", "bad stat %d\n", stat);
+
+        // This will print to standard error:
+        // "CSCio-ERROR-CSCioBufRead: bad stat 55\n"
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

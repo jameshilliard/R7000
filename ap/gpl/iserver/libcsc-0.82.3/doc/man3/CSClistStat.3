@@ -1,0 +1,53 @@
+CSClistStat(3)
+
+NAME
+        CSClistStat - retrieve libcsc list statistics
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSClistStat (
+                          CSClistType   const list,
+                          size_t*       const pushCountPtr,
+                          size_t*       const popCountPtr,
+                          size_t*       const maxAllocPtr,
+                          size_t*       const curAllocPtr
+                          );
+
+RETURN VALUE
+        CSClistStat(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSClistStat() returns some statistics from `list'.
+
+        If `pushCountPtr' is not NULL, then CSClistStat() writes the total of
+        libcsc list pushes to the size_t that is pointed to by `pushCountPtr'.
+
+        If `popCountPtr' is not NULL, then CSClistStat() writes the total of
+        libcsc list pops to the size_t that is pointed to by `popCountPtr'.
+
+        If `maxAllocPtr' is not NULL, then CSClistStat() writes the total count
+        of bytes pushed to the size_t that is pointed to by `maxAllocPtr'.
+
+        If `curAllocPtr' is not NULL, then CSClistStat() writes the current
+        count of bytes in the libcsc list to the size_t that is pointed to by
+        `curAllocPtr'.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeNext(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)

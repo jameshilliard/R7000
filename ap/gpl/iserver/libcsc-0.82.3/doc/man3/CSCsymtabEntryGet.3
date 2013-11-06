@@ -1,0 +1,36 @@
+CSCsymtabEntryGet(3)
+
+NAME
+        CSCsymtabEntryGet - get a symbol in a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCsymbolType*   CSCsymtabEntryGet (
+                                           CSCsymTableType   const symTab,
+                                           char*             const symName,
+                                           CSCmemListType    const memLst
+                                           );
+
+RETURN VALUE
+        CSCsymtabEntryGet(), if successful, returns a pointer to a
+        CSCsymbolType, or NULL if otherwise unsuccessful.
+
+DESCRIPTION
+        CSCsymtabEntryGet() returns a pointer to a duplicate symbol from
+        `symTab' whose name field matches `symName'.
+
+        If `memLst' is not NULL the duplicated symbol is dynamically allocated
+        with CSCmemDup(), and should be removed with CSCmemFree() (with
+        "tagData" of zero) to avoid leaking memory.
+
+        If `memLst' is NULL the duplicated symbol is dynamically allocated with
+        malloc() and should be removed with free() to avoid leaking memory.
+
+SEE ALSO
+        CSCsymtabNew(3)
+        CSCsymtabDel(3)
+        CSCsymtabStat(3)
+        CSCsymtabEntryPut(3)
+        CSCsymtabEntryDel(3)
+        CSCsymtabEntryNext(3)

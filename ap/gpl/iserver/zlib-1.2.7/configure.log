@@ -1,0 +1,1409 @@
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:44:37 CST 2013
+
+=== ztest26272.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26272.c
+./configure: line 183: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+... using arm-brcm-linux-uclibcgnueabi-gcc
+
+Checking for shared library support...
+=== ztest26272.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+No shared library support; try without defining CC and CFLAGS
+Building static library libz.a version 1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest26272.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for off64_t... No.
+
+=== ztest26272.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -o ztest26272 ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for fseeko... No.
+
+=== ztest26272.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -o ztest26272 ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for strerror... No.
+
+=== ztest26272.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for unistd.h... No.
+
+=== ztest26272.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for stdarg.h... No.
+
+=== ztest26272.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking whether to use vs[n]printf() or s[n]printf()... using s[n]printf().
+
+=== ztest26272.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  snprintf(buf, sizeof(buf), "%s", "foo");
+  return 0;
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -o ztest26272 ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for snprintf() in stdio.h... No.
+  WARNING: snprintf() not found, falling back to sprintf(). zlib
+  can build but will be open to possible buffer-overflow security
+  vulnerabilities.
+
+=== ztest26272.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  return sprintf(buf, "%s", "foo");
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf ztest26272.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for return value of sprintf()... No.
+  WARNING: apparently sprintf() does not return a value. zlib
+  can build but will be open to possible string-format security
+  vulnerabilities.
+
+=== ztest26272.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void ztest26272.c -o ztest26272
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Looking for a four-byte integer type... Not found.
+
+ALL = static
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+SHAREDLIB =
+SHAREDLIBM =
+SHAREDLIBV =
+STATICLIB = libz.a
+TEST = all teststatic
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux 2.6.27.41-170.2.117.fc10.i686.PAE
+--------------------
+
+
+--------------------
+./configure --host=arm-linux --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:45:20 CST 2013
+./configure --help for help
+--------------------
+./configure --host=arm-linux CC=arm-linux-gcc --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:46:11 CST 2013
+./configure --help for help
+--------------------
+./configure CC=arm-linux-gcc --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:46:58 CST 2013
+./configure --help for help
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:47:37 CST 2013
+
+=== ztest26606.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26606.c
+./configure: line 183: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+... using arm-brcm-linux-uclibcgnueabi-gcc
+
+Checking for shared library support...
+=== ztest26606.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+No shared library support; try without defining CC and CFLAGS
+Building static library libz.a version 1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest26606.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for off64_t... No.
+
+=== ztest26606.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -o ztest26606 ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for fseeko... No.
+
+=== ztest26606.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -o ztest26606 ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for strerror... No.
+
+=== ztest26606.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for unistd.h... No.
+
+=== ztest26606.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for stdarg.h... No.
+
+=== ztest26606.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking whether to use vs[n]printf() or s[n]printf()... using s[n]printf().
+
+=== ztest26606.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  snprintf(buf, sizeof(buf), "%s", "foo");
+  return 0;
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -o ztest26606 ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for snprintf() in stdio.h... No.
+  WARNING: snprintf() not found, falling back to sprintf(). zlib
+  can build but will be open to possible buffer-overflow security
+  vulnerabilities.
+
+=== ztest26606.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  return sprintf(buf, "%s", "foo");
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf ztest26606.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for return value of sprintf()... No.
+  WARNING: apparently sprintf() does not return a value. zlib
+  can build but will be open to possible string-format security
+  vulnerabilities.
+
+=== ztest26606.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void ztest26606.c -o ztest26606
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Looking for a four-byte integer type... Not found.
+
+ALL = static
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+SHAREDLIB =
+SHAREDLIBM =
+SHAREDLIBV =
+STATICLIB = libz.a
+TEST = all teststatic
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux 2.6.27.41-170.2.117.fc10.i686.PAE
+--------------------
+
+
+--------------------
+./configure
+Thu Jan 24 09:51:17 CST 2013
+
+Checking for gcc...
+=== ztest26802.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c -O3 ztest26802.c
+... using gcc
+
+Checking for shared library support...
+=== ztest26802.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest26802.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest26802.so ztest26802.o
+Building shared library libz.so.1.2.7 with gcc.
+
+
+=== ztest26802.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest26802.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest26802 ztest26802.c
+Checking for strerror... Yes.
+
+=== ztest26802.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking for unistd.h... Yes.
+
+=== ztest26802.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking for stdarg.h... Yes.
+
+=== ztest26802.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest26802.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest26802 ztest26802.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest26802.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest26802.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest26802.c
+Checking for attribute(visibility) support... Yes.
+
+=== ztest26802.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN ztest26802.c -o ztest26802
+Looking for a four-byte integer type... Found.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.7
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.7
+Z_U4 = unsigned
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 09:52:19 CST 2013
+
+=== ztest26996.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26996.c
+./configure: line 183: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+... using arm-brcm-linux-uclibcgnueabi-gcc
+
+Checking for shared library support...
+=== ztest26996.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+No shared library support; try without defining CC and CFLAGS
+Building static library libz.a version 1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest26996.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for off64_t... No.
+
+=== ztest26996.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -o ztest26996 ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for fseeko... No.
+
+=== ztest26996.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -o ztest26996 ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for strerror... No.
+
+=== ztest26996.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for unistd.h... No.
+
+=== ztest26996.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for stdarg.h... No.
+
+=== ztest26996.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking whether to use vs[n]printf() or s[n]printf()... using s[n]printf().
+
+=== ztest26996.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  snprintf(buf, sizeof(buf), "%s", "foo");
+  return 0;
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -o ztest26996 ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for snprintf() in stdio.h... No.
+  WARNING: snprintf() not found, falling back to sprintf(). zlib
+  can build but will be open to possible buffer-overflow security
+  vulnerabilities.
+
+=== ztest26996.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  return sprintf(buf, "%s", "foo");
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf ztest26996.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for return value of sprintf()... No.
+  WARNING: apparently sprintf() does not return a value. zlib
+  can build but will be open to possible string-format security
+  vulnerabilities.
+
+=== ztest26996.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void ztest26996.c -o ztest26996
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Looking for a four-byte integer type... Not found.
+
+ALL = static
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+SHAREDLIB =
+SHAREDLIBM =
+SHAREDLIBV =
+STATICLIB = libz.a
+TEST = all teststatic
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux 2.6.27.41-170.2.117.fc10.i686.PAE
+--------------------
+
+
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 10:02:42 CST 2013
+
+=== ztest27436.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest27436.c
+./configure: line 183: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+... using arm-brcm-linux-uclibcgnueabi-gcc
+
+Checking for shared library support...
+=== ztest27436.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+No shared library support; try without defining CC and CFLAGS
+Building static library libz.a version 1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest27436.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for off64_t... No.
+
+=== ztest27436.c ===
+#include <stdio.h>
+int main(void) {
+  fseeko(NULL, 0, 0);
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -o ztest27436 ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for fseeko... No.
+
+=== ztest27436.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -o ztest27436 ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for strerror... No.
+
+=== ztest27436.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for unistd.h... No.
+
+=== ztest27436.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for stdarg.h... No.
+
+=== ztest27436.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking whether to use vs[n]printf() or s[n]printf()... using s[n]printf().
+
+=== ztest27436.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  snprintf(buf, sizeof(buf), "%s", "foo");
+  return 0;
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -o ztest27436 ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for snprintf() in stdio.h... No.
+  WARNING: snprintf() not found, falling back to sprintf(). zlib
+  can build but will be open to possible buffer-overflow security
+  vulnerabilities.
+
+=== ztest27436.c ===
+#include <stdio.h>
+int mytest()
+{
+  char buf[20];
+  return sprintf(buf, "%s", "foo");
+}
+int main()
+{
+  return (mytest());
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf ztest27436.c
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Checking for return value of sprintf()... No.
+  WARNING: apparently sprintf() does not return a value. zlib
+  can build but will be open to possible string-format security
+  vulnerabilities.
+
+=== ztest27436.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void ztest27436.c -o ztest27436
+./configure: line 141: arm-brcm-linux-uclibcgnueabi-gcc: command not found
+(exit code 127)
+Looking for a four-byte integer type... Not found.
+
+ALL = static
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -DNO_FSEEKO -DNO_STRERROR -DNO_snprintf -DHAS_sprintf_void
+SHAREDLIB =
+SHAREDLIBM =
+SHAREDLIBV =
+STATICLIB = libz.a
+TEST = all teststatic
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux 2.6.27.41-170.2.117.fc10.i686.PAE
+--------------------
+
+
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 10:10:29 CST 2013
+
+=== ztest7489.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest7489.c
+... using gcc
+
+Checking for shared library support...
+=== ztest7489.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC ztest7489.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -o ztest7489.so ztest7489.o
+Building shared library libz.so.1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest7489.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest7489.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest7489 ztest7489.c
+Checking for strerror... Yes.
+
+=== ztest7489.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking for unistd.h... Yes.
+
+=== ztest7489.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking for stdarg.h... Yes.
+
+=== ztest7489.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest7489.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest7489 ztest7489.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest7489.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest7489.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest7489.c
+Checking for attribute(visibility) support... Yes.
+
+=== ztest7489.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN ztest7489.c -o ztest7489
+Looking for a four-byte integer type... Not found.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.7
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+Thu Jan 24 10:22:08 CST 2013
+
+=== ztest17530.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest17530.c
+... using gcc
+
+Checking for shared library support...
+=== ztest17530.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC ztest17530.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -o ztest17530.so ztest17530.o
+Building shared library libz.so.1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest17530.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest17530.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest17530 ztest17530.c
+Checking for strerror... Yes.
+
+=== ztest17530.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking for unistd.h... Yes.
+
+=== ztest17530.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking for stdarg.h... Yes.
+
+=== ztest17530.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest17530.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest17530 ztest17530.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest17530.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest17530.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest17530.c
+Checking for attribute(visibility) support... Yes.
+
+=== ztest17530.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN ztest17530.c -o ztest17530
+Looking for a four-byte integer type... Not found.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.7
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/usr
+Tue Jan 29 10:25:32 CST 2013
+
+=== ztest10386.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include ztest10386.c
+... using gcc
+
+Checking for shared library support...
+=== ztest10386.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC ztest10386.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -o ztest10386.so ztest10386.o
+Building shared library libz.so.1.2.7 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+
+=== ztest10386.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest10386.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest10386 ztest10386.c
+Checking for strerror... Yes.
+
+=== ztest10386.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking for unistd.h... Yes.
+
+=== ztest10386.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking for stdarg.h... Yes.
+
+=== ztest10386.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest10386.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -o ztest10386 ztest10386.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest10386.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest10386.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 ztest10386.c
+Checking for attribute(visibility) support... Yes.
+
+=== ztest10386.c ===
+#include <stdio.h>
+#define is32(n,t) for(n=1,k=0;n;n<<=1,k++);if(k==32){puts(t);return 0;}
+int main() {
+    int k;
+    unsigned i;
+    unsigned long l;
+    unsigned short s;
+    is32(i, "unsigned")
+    is32(l, "unsigned long")
+    is32(s, "unsigned short")
+    return 1;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN ztest10386.c -o ztest10386
+Looking for a four-byte integer type... Not found.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS = -L/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/lib
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -O2 -DBCMWPA2 -DRESTART_ALL_PROCESSES -D__CONFIG_USBAP__ -DBCMQOS -DBCMWPS -D__CONFIG_EMF__ -DTRAFFIC_MGMT -DPHYMON -DSUPPORT_REMOTE_HTTPS -DINCLUDE_WPS_V20 -DINCLUDE_5G_AUTO_CHANNEL -DOPENDNS_PARENTAL_CONTROL -DINCLUDE_UCP -DU12H240 -DR6300v2 -DMULTIPLE_SSID -DENABLE_ML -DBCM53125 -DBCM5301X -DCONFIG_RUSSIA_IPTV -DDLNA -DHTTP_ACCESS_USB -DMAX_USB_ACCESS -DSAMBA_ENABLE -DUSB_NEW_SPEC -DINCLUDE_WIFI_BUTTON -DINCLUDE_USB_LED -DINCLUDE_DUAL_BAND -DSINGLE_FIRMWARE -DINCLUDE_GET_ST_CHKSUM -DUNIFIED_STR_TBL -DFIRST_MTD_ROTATION -DWIFI_ON_OFF_SCHE -DAUTO_CONN_24HR -DIGMP_PROXY -DAP_MODE -D__CONFIG_IGMP_SNOOPING__ -DLINUX26 -DINCLUDE_IPV6 -DPRESET_WL_SECURITY -DNEW_BCM_WPS_IPC -DSUPPORT_AC_MODE -DSTA_MODE -DPPP_RU_DESIGN -DEXT_ACS -D__CONFIG_PLC__ -D__CONFIG_URE__ -DPLC -DWPS_LONGPUSH_DISABLE -Os -DLINUX26 -DCONFIG_KERNEL_2_6_36 -I/home/tab/r6300/V1.0.0.88_1.0.14/ap/gpl/iserver/build/include -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.7
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.7
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+

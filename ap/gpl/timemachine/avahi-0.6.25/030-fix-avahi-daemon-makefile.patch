@@ -1,0 +1,19 @@
+diff -Naur a/avahi-daemon/Makefile.am b/avahi-daemon/Makefile.am
+--- a/avahi-daemon/Makefile.am	2010-10-20 16:38:16.000000000 +0530
++++ b/avahi-daemon/Makefile.am	2010-10-20 15:51:16.000000000 +0530
+@@ -32,11 +32,11 @@
+ AM_CFLAGS+= \
+ 	-DAVAHI_DAEMON_RUNTIME_DIR=\"$(avahi_runtime_dir)/avahi-daemon/\" \
+ 	-DAVAHI_SOCKET=\"$(avahi_socket)\" \
+-	-DAVAHI_SERVICE_DIR=\"$(servicedir)\" \
+-	-DAVAHI_CONFIG_FILE=\"$(pkgsysconfdir)/avahi-daemon.conf\" \
+-	-DAVAHI_HOSTS_FILE=\"$(pkgsysconfdir)/hosts\" \
++	-DAVAHI_SERVICE_DIR=\"/etc/avahi/services\" \
++	-DAVAHI_CONFIG_FILE=\"/etc/avahi/avahi-daemon.conf\" \
++	-DAVAHI_HOSTS_FILE=\"/etc/avahi/hosts\" \
+ 	-DAVAHI_DBUS_INTROSPECTION_DIR=\"$(introspectiondir)\" \
+-	-DAVAHI_CONFIG_DIR=\"$(pkgsysconfdir)\"
++	-DAVAHI_CONFIG_DIR=\"/etc/avahi\"
+ 
+ sbin_PROGRAMS = \
+ 	avahi-daemon

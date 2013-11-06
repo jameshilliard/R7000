@@ -1,0 +1,3 @@
+strcasecmp.lo: strcasecmp.c ../../config.h
+
+../../config.h:

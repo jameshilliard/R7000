@@ -1,0 +1,32 @@
+*~
+*.swp
+Makefile.in
+Makefile
+*.o
+*.lo
+*.a
+*.la
+.deps/
+.libs/
+
+# autofoo stuff
+autom4te.cache
+aclocal.m4
+compile
+config.guess
+config.h
+config.h.in
+config.log
+config.status
+config.sub
+configure
+depcomp
+install-sh
+libtool
+ltmain.sh
+missing
+stamp-h1
+
+# ignore debian packaging for convenience
+debian/
+

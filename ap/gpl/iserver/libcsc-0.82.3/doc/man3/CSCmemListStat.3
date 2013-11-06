@@ -1,0 +1,65 @@
+CSCmemListStat(3)
+
+NAME
+        CSCmemListStat - get information about a memList
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemListStat (
+                             CSCmemListType   const memList,
+                             size_t*          const allocCountPtr,
+                             size_t*          const freeCountPtr,
+                             size_t*          const maxMemAllocPtr,
+                             size_t*          const curMemAllocPtr
+                             );
+
+RETURN VALUE
+        CSC_OK ............. successful
+
+        CSC_NO_PROFILING ... memList is not profiling
+
+        CSC_BADARG ......... memList is NULL
+
+        CSC_CORRUPT ........ corruption is detected in memList
+                             and CSCmemListStat() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemListStat() can return the allocate count, free count, current
+        allocating, and highest allocation from `memList', if `memList' was
+        specified when it was created by CSCmemInit() to be profiling.
+
+        When profiling:
+
+                If `allocCountPtr' is not NULL, then CSCmemListStat() writes to
+                the size_t pointed to by `allocCountPtr' the total number of
+                allocates.
+
+                If `freeCountPtr' is not NULL, then CSCmemListStat() writes to
+                the size_t pointed to by `freeCountPtr' the total number of
+                frees.
+
+                If `maxMemAllocPtr' is not NULL, then CSCmemListStat() writes to
+                the size_t pointed to by `maxMemAllocPtr' the number of bytes
+                ever allocated at one time.
+
+                If `curMemAllocPtr' is not NULL, then CSCmemListStat() writes to
+                the size_t pointed to by `curMemAllocPtr' the number of
+                currently allocated bytes.
+
+        CSCmemListStat() can be used to determine if `memList' is profiling by
+        using NULL for all of `allocCountPtr', `freeCountPtr', `maxMemAllocPtr',
+        and `curMemAllocPtr'. CSC_NO_PROFILING is returned if `memList' is not
+        profiling and CSC_OK is returned if `memList' is profiling.
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListFree(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

@@ -1,0 +1,44 @@
+CSChashEntryNext(3)
+
+NAME
+        CSChashEntryNext - find next entry in a libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSChashEntryType   CSChashEntryNext (
+                                            CSChashTableType   const hashTable,
+                                            CSChashEntryType   const entry
+                                            );
+
+RETURN VALUE
+        CSChashEntryNext(), if successful, returns an opaque libcsc hash table
+        entry.  If not successful, CSChashEntryNext() returns NULL.
+
+DESCRIPTION
+        CSChashEntryNext() uses the libcsc hash table referred to by the opaque
+        `hashTable' and returns the next consecutive entry following the entry
+        indicated by the opaque `entry'.  This next consecutive entry is the
+        entry physically following `entry', its key may hash to the save value
+        as `entry''s key, or it may be some larger hash value.
+
+        If `entry' is NULL, then the first item in the table is returned.
+
+        If `hashTable' is a table with no entries, or there are no more entries
+        following entry, then NULL is returned.
+
+BUGS
+        This function provides one of the few ways to get direct access to a
+        libcsc hash table's internal data.  Avoid using this function.
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryPut(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryStat(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

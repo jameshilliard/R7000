@@ -1,0 +1,50 @@
+CSChashEntryGet(3)
+
+NAME
+        CSChashEntryGet - get an item from a libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSChashEntryGet (
+                              CSChashTableType   const hashTable,
+                              CSChashKeyUnion*   const keyPtr,
+                              void**             const itemPtrPtr,
+                              size_t*            const itemSizePtr,
+                              CSCmemListType     const memLst
+                              );
+
+RETURN VALUE
+        CSChashEntryGet(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSChashEntryGet() looks up the key pointed to by `keyPtr' in the libcsc
+        hash table represented by the opaque `hashTable'.
+
+        If the item corresponding to the key is found in the table, then a copy
+        of the the data is allocated with CSCmemDup(), or malloc() if `memLst'
+        is NULL, and the pointer of the newly allocated data it is written to
+        the void pointer that is pointed to by `itemPtrPtr', and its size in
+        bytes is written to the size_t pointed to by `itemSizePtr'.
+
+        Since CSChashEntryGet(), if successful, allocates storage for the
+        retrieved item. If `memLst' is not null then CSCmemDup() is used with
+        the value of `memLst'; the data should be removed with CSCmemFree(),
+        using "tagData" value of zero, to avoid leaking this memory. If `memLst'
+        is NULL, then malloc() is use to allocate storage, and free() should be
+        used to remove the data to avoid leaking this memory.
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryPut(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashEntryStat(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

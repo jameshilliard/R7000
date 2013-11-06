@@ -1,0 +1,16 @@
+# libnetfilter_conntrack pkg-config file
+
+prefix=/tmp/wlanswbuild/hwnbuild/AARDVARK_REL_6_30_163_30/linux-2.6.36-arm-external-vista-router-partial-src_130228_0/components/opensource/netfilter/libnetfilter_conntrack/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libnetfilter_conntrack
+Description: netfilter userspace conntrack access library
+URL: http://netfilter.org/projects/libnetfilter_conntrack/
+Version: 1.0.2
+Requires: libnfnetlink
+Conflicts:
+Libs: -L${libdir} -lnetfilter_conntrack
+Libs.private: -L/tmp/wlanswbuild/hwnbuild/AARDVARK_REL_6_30_163_30/linux-2.6.36-arm-external-vista-router-partial-src_130228_0/components/opensource/netfilter/libnfnetlink/install/lib -lnfnetlink
+Cflags: -I${includedir}

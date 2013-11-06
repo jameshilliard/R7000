@@ -1,0 +1,28 @@
+libcsc - csc programmers' resource library
+
+Copyright (c) 1998-2003 Douglas R. Jerome, Peoria, AZ USA
+
+This software is protected as an unpublished work under the U.S. Copyright Act
+of 1976.  All rights reserved by Douglas R. Jerome.
+
+libcsc is free software; you can redistribute it and/or modify it under the
+terms of the GNU Library General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later version.
+
+libcsc is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU Library General Public License for more
+details.
+
+You should have received a copy of the GNU Library General Public License along
+with the libcsc library; see the file COPYRIGHT.  If not, write to the Free
+Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+
+I ask that something like the following message be included in all derived
+works:
+	Portions developed by:  Douglas R. Jerome <jerome@globalcrossing.net>
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT EXPRESS OR IMPLIED WARRANTY.  THERE
+ARE NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS SOFTWARE FOR ANY PURPOSE.
+DOUGLAS R. JEROME SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY THE USERS OF
+THIS SOFTWARE.

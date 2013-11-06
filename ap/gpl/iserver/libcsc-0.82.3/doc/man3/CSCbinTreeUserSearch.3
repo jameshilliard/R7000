@@ -1,0 +1,66 @@
+CSCbinTreeUserSearch(3)
+
+NAME
+        CSCbinTreeUserSearch - arbitrary search of libcsc balanced binary tree
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCbinTreeNodeType   CSCbinTreeUserSearch (
+                                               CSCbinTreeType   const tree,
+                                               CSCcmpFnType           clientFn,
+                                         const void*            const clientData
+                                                  );
+
+RETURN VALUE
+        CSCbinTreeUserSearch(), if successful, returns a CSCbinTreeNodeType
+        that is a node from the libcsc balanced binary tree `tree'.
+        CSCbinTreeUserSearch() returns NULL, if not successful.
+
+DESCRIPTION
+        CSCbinTreeUserSearch() traverses the libcsc balanced binary tree `tree'.
+        The tree traversal algorithm and traversal termination are controlled by
+        the client callback function `clientFn'.
+
+        `clientFn' is a pointer to a libcsc CSCcmpFnType function that is called
+        for each node in `tree'.  The prototype for clientFn is:
+
+                int    (*clientFn) (void*, void*);
+
+        The client callback function `clientFn' is called with the client
+        supplied data `clientData' and a node pointer (on which the client then
+        needs to use CSCbinTreeNodeStat()):
+
+                switchValue = (*clientFn) ((void*)&node, (void*)clientData);
+
+        This gives the client control over tree traversal.  `clientFn' should
+        return only the values -1, 0, and 1:
+
+                -1 .... traversal continues on left node.
+                 0 .... terminate traversal.
+                 1 .... traversal continues on right node.
+
+BUGS
+        This function probably makes no sense.
+
+        If `clientFn' is NULL, and libcsc was NOT compiled with the DEBUG macro,
+        then CSCbinTreeUserSearch() probably dies a horrible segfault death.
+
+SEE ALSO
+        CSCbinTreeNew(3)
+        CSCbinTreeDel(3)
+        CSCbinTreeInsert(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreeStat(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeTagSearch(3)
+        CSCbinTreeNodeStat(3)
+        CSCbinTreeNodePrint(3)

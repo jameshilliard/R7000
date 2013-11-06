@@ -1,0 +1,3 @@
+netddp_recvfrom.lo: netddp_recvfrom.c ../../config.h
+
+../../config.h:

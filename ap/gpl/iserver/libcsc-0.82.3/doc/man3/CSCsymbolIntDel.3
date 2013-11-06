@@ -1,0 +1,44 @@
+CSCsymbolIntDel(3)
+
+NAME
+        CSCsymbolIntDel - delete a integer symbol
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymbolIntDel (
+                              CSCsymbolType**   const symPtrPtr,
+                              CSCmemListType    const memList,
+                              int                     memTag
+                              );
+
+RETURN VALUE
+        CSC_OK ....... successful
+
+        CSC_BADARG ... symPtrPtr or memList is NULL
+
+        CSC_ERROR .... other errors
+
+DESCRIPTION
+        CSCsymbolIntDel() removes the integer symbol whose pointer is pointed
+        to by `symPtrPtr'.
+
+BUGS
+        The name field of the symbol structure is a character pointer and
+        CSCsymbolIntDel() tries to deallocate it; therefore, don't create a
+        symbol with a statically allocated name.
+
+SEE ALSO
+        CSCsymbolIntInit(3)
+        CSCsymbolFloatInit(3)
+        CSCsymbolPtrInit(3)
+        CSCsymbolIntNew(3)
+        CSCsymbolFloatNew(3)
+        CSCsymbolPtrNew(3)
+        CSCsymbolFloatDel(3)
+        CSCsymbolPtrDel(3)
+        CSCsymbolIntWrite(3)
+        CSCsymbolFloatWrite(3)
+        CSCsymbolPtrWrite(3)
+        CSCsymbolDup(3)
+        CSCsymbolDel(3)

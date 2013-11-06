@@ -1,0 +1,42 @@
+CSCtimerStat(3)
+
+NAME
+        CSCtimerStat - get current timer's time
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCtimerStat (
+                           CSCtimerType   const timer,
+                           double*        const diffPtr
+                           );
+
+RETURN VALUE
+        CSC_OK ........ successful
+
+        CSC_ERROR ..... at least one of the two marks has not been taken with
+                        timer
+
+        CSC_BADARG .... timer is NULL
+
+        CSC_CORRUPT ... corruption is detected in timer
+                        and CSCtimerStat() is compiled with DEBUG
+
+DESCRIPTION
+        CSCtimerStat() writes to the double pointed to by `diffPtr' the
+        difference between the marks taken with `timer'. The difference is in
+        seconds.
+
+        Marks are taken with `timer' by using functions CSCtimerMark() and
+        CSCtimerDiff(). The difference in seconds between CSCtimerMark() and
+        CSCtimerDiff() is kept in `timer' as a double.
+
+        The `timer's difference between marks is created by CSCtimerDiff();
+        CSCtimerStat() merely returns the saved value.
+
+SEE ALSO
+        PRtimerInit(3)
+        PRtimerDone(3)
+        PRtimerClear(3)
+        PRtimerMark(3)
+        PRtimerDiff(3)

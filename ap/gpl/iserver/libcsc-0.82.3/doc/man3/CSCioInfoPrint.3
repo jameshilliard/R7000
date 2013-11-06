@@ -1,0 +1,38 @@
+CSCioInfoPrint(3)
+
+NAME
+        CSCioInfoPrint - formatted write to stdout
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCioInfoPrint (
+                               const char*   cscPtr,
+                               const char*   csuPtr,
+                               const char*   fmtPtr,
+                               );
+
+RETURN VALUE
+        CSCioInfoPrint() returns no value.
+
+DESCRIPTION
+        CSCioInfoPrint() is a front end, or wrapper, around fprintf() to
+        standard output. Before printing the typical formatted string,
+        CSCioInfoPrint() prints a string with `csc' and `csu':
+        "<csc>-INFO-<csu>: ".
+
+EXAMPLE
+        stat = 55;
+        (void)CSCioInfoPrint ("CSCio", "CSCioBufRead", "stat is %d\n", stat);
+
+        // This will print to standard output:
+        // "CSCio-INFO-CSCioBufRead: stat is 55\n"
+
+SEE ALSO
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

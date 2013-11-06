@@ -1,0 +1,28 @@
+CSCfilePathName(3)
+
+NAME
+        CSCfilePathName - strip last component (file) from pathname
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        char*   CSCfilePathName (
+                                const char*            const path,
+                                      CSCmemListType   const memList,
+                                      int                    memTag
+                                );
+
+RETURN VALUE
+        CSCfilePathName() returns a pointer to a new string that begins with
+        the first character in path and terminates with the last character
+        preceding the last '/' character.
+
+        CSCfilePathName() returns NULL if it is not successful.
+
+DESCRIPTION
+        If CSCfilePathName() is successful, it returns a pointer to a new
+        string that is allocated by CSCmemAlloc(); the string must be freed
+        with CSCmemFree() to avoid a memory leak.
+
+SEE ALSO
+        CSCfileBaseName(3)

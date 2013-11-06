@@ -1,0 +1,54 @@
+CSCsysInstallSignal(3)
+
+NAME
+        CSCsysInstallSignal - fairly portable signal installer
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCsigFnType   CSCsysInstallSignal (
+                                           const int              signo,
+                                           const CSCsigFnType     func,
+                                           const CSCsigModeType   mode
+                                           );
+
+RETURN VALUE
+        The return value from CSCsysInstallSignal() is a function pointer to a
+        signal handler.
+
+        If CSCsysInstallSignal() is NOT successful, then the return value is
+        SIG_ERR cast as a signal handler function.
+
+        If CSCsysInstallSignal() is successful, then the return value is a
+        function pointer to the previously installed handler cast as a
+        signal handler function; this might be NULL in the typical case that
+        there was no previous signal handler.
+
+DESCRIPTION
+        CSCsysInstallSignal() is a reliable version of signal() using POSIX
+        sigaction().
+
+        `signo' is the signal number of the signal for which the signal handler
+        function `func' is installed.
+
+        `mode' is CSC_SIG_INTERRUPT or CSC_SIG_RESTART; it is used to control
+        behavior, specifically for slow system calls:
+
+                mode                    behavior
+                ----                    --------
+                CSC_SIG_INTERRUPT       slow system calls are interrupted
+
+                CSC_SIG_RESTART         slow system calls are not interrupted
+
+        An illustration of slow system call and signal interrupt is a program
+        that creates children and has a signal handler for SIGCHLD. If this
+        program blocks on something like an accept() on a TCP socket connection
+        and a child process terminates, then the registered SIGCHLD signal
+        handler runs; but, the process unblocks and returns from the accept()
+        with no connection (errno should be EINTR). This can be avoided by
+        using CSCsysInstallSignal() to install the SIGCHLD signal handler
+        function `func' and specifying CSC_SIG_RESTART for `mode'.
+
+SEE ALSO
+        CSCsysLimitsGet(3)
+        CSCsysUsleep(3)

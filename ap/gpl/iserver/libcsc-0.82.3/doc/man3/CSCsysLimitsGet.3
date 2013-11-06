@@ -1,0 +1,41 @@
+CSCsysLimitsGet(3)
+
+NAME
+        CSCsysLimitsGet - find some system limits
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsysLimitsGet (
+                              int*    const fileOpenMaxPtr,
+                              int*    const fileNameLengthPtr,
+                              int*    const filePathLengthPtr
+                              );
+
+RETURN VALUE
+        RTS_OK ........ successful
+
+        CSC_BADARG .... fileOpenMaxPtr, or fileNameLengthPtr, or
+                        filePathLengthPtr is NULL
+
+        CSC_ERROR ..... error getting limit from system call
+
+DESCRIPTION
+        CSCsysLimitsGet() makes some system calls and writes the integer
+        information to the addresses specified in the arguments.
+
+        `fileOpenMaxPtr' must be a non-NULL pointer to an integer. If the call
+        to CSCsysLimitsGet() is successful, the integer value will be the
+        maximum number of open files allowed per process.
+
+        `fileNameLenghtPtr' must be a non-NULL pointer to an integer. If the
+        call to CSCsysLimitsGet() is successful, the integer value will be the
+        maximum files name length allowed by the system.
+
+        `filePathLengthPtr' must be a non-NULL pointer to an integer. If the
+        call to CSCsysLimitsGet() is successful, the integer value will be the
+        maximum path length allowed by the system.
+
+SEE ALSO
+        CSCsysInstallSignal(3)
+        CSCsysUsleep(3)

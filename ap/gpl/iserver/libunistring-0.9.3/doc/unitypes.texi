@@ -1,0 +1,15 @@
+@node unitypes.h
+@chapter Elementary types @code{<unitypes.h>}
+
+The include file @code{<unitypes.h>} provides the following basic types.
+
+@deftp Type uint8_t
+@deftpx Type uint16_t
+@deftpx Type uint32_t
+These are the storage units of UTF-8/16/32 strings, respectively.  The definitions are
+taken from @code{<stdint.h>}, on platforms where this include file is present.
+@end deftp
+
+@deftp Type ucs4_t
+This type represents a single Unicode character, outside of an UTF-32 string.
+@end deftp

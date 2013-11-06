@@ -1,0 +1,50 @@
+CSChashEntryStat(3)
+
+NAME
+        CSChashEntryStat - query the fields of a libcsc hash table entry
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSChashEntryStat (
+                               CSChashEntryType    const entry,
+                               CSChashKeyUnion**   const keyPtrPtr,
+                               void**              const itemPtrPtr,
+                               size_t*             const itemSizePtr
+                               );
+
+RETURN VALUE
+        If successful, CSChashEntryStat() returns CSC_OK.  If entry is NULL,
+        then CSC_BADARG is returned.  If libcsc was compiled with the DEBUG
+        macro and the libcsc hash entry at entry is munged up, then CSC_CORRUPT
+        is returned.
+
+DESCRIPTION
+        CSChashEntryStat() queries the libcsc hash table entry represented by
+        the opaque `entry'.
+
+        If `keyPtrPtr' is not NULL, then the a pointer to `entry''s key is
+        written to the CSChashKeyUnion pointer that is pointed to by
+        `keyPtrPtr'.
+
+        If `itemPtrPtr' is not NULL, then `entry''s item pointer is written to
+        the void pointer that is pointed to by `itemPtrPtr'.
+
+        If `itemSizePtr' is not NULL, then the size, in bytes, of `entry''s
+        item is written to the size_t pointed to by `itemSizePtr'.
+
+BUGS
+        This function provides one of the few ways to get direct access to a
+        libcsc hash table's internal data.  Avoid using this function.
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryPut(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashRead(3)
+        CSChashWrite(3)
+        CSChashDump(3)

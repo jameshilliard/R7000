@@ -1,0 +1,38 @@
+CSCioWarnPrint(3)
+
+NAME
+        CSCioWarnPrint - formatted write to stdout
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void   CSCioWarnPrint (
+                               const char*   cscPtr,
+                               const char*   csuPtr,
+                               const char*   fmtPtr,
+                               );
+
+RETURN VALUE
+        CSCioWarnPrint() returns no value.
+
+DESCRIPTION
+        CSCioWarnPrint() is a front end, or wrapper, around fprintf() to
+        standard output. Before printing the typical formatted string,
+        CSCioWarnPrint() prints a string with `csc' and `csu':
+        "<csc>-WARN-<csu>: ".
+
+EXAMPLE
+        stat = 55;
+        (void)CSCioWarnPrint ("CSCio", "CSCioBufRead", "stat is %d\n", stat);
+
+        // This will print to standard output:
+        // "CSCio-WARN-CSCioBufRead: stat is 55\n"
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioRead(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

@@ -1,0 +1,36 @@
+CSCnotificationBoardNew(3)
+
+NAME
+        CSCnotificationBoardNew - create a new notification board
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSCnotificationBoardType   CSCnotificationBoardNew (
+                                                const char*            name,
+                                                      CSCmonFnType     monFunc,
+                                                const void*            monData,
+                                                      CSCprofileType   profiling
+                                                           );
+
+RETURN VALUE
+        CSCnotificationBoardNew(), if successful, returns an opaque data type
+        representing a new libcsc notification board, or NULL if otherwise not
+        successful.
+
+DESCRIPTION
+        CSCnotificationBoardNew() creates a new libcsc notification board.  A
+        notification board is simply something to hold an arbitrary number of
+        notifications (like a cork note board).
+
+        `profiling' can be CSC_DO_PROFILING or CSC_NO_PROFILING; it specifies
+        whether alocate/free statistics should actually be generated and kept
+        in the list.
+
+SEE ALSO
+        CSCnotificationBoardDel(3)
+        CSCnotificationBoardPrint(3)
+        CSCnotificationNew(3)
+        CSCnotificationDel(3)
+        CSCnotificationPost(3)
+        CSCnotificationRegister(3)

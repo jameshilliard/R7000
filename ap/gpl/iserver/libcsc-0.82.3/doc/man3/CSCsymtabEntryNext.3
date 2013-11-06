@@ -1,0 +1,41 @@
+CSCsymtabEntryNext(3)
+
+NAME
+        CSCsymtabEntryNext - find next entry in a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        void*   CSCsymtabEntryNext (
+                                   CSCsymTableType   const symTab,
+                                   void*             const lhPtr
+                                   );
+
+RETURN VALUE
+        CSCsymtabEntryNext(), if successful, returns an opaque symbol table
+        entry.  If not successful, CSCsymtabEntryNext() returns NULL.
+
+DESCRIPTION
+        CSCsymtabEntryNext() uses the libcsc symbol table specified by the
+        opaque `symTab' and returns a pointer to the next consecutive entry
+        following the entry pointed to by `lhPtr'.  This next consecutive entry
+        is the entry physically following the entry pointed to by `lhPtr'.
+
+        If `lhPtr' is NULL, then the first item in the table is returned.
+
+        If `symTab' is a table with no entries, or there are no more entries
+        following the entry pointed to by `lhPtr', then NULL is returned.
+
+BUGS
+        There is no legitimate way for client code to know what to do with the
+        void pointer returned from this function.  The secret is the returned
+        value is a CSChashEntryType with its dataPtr field being a pointer to
+        the symbol, but that might (very much not likely) change.
+
+SEE ALSO
+        CSCsymtabNew(3)
+        CSCsymtabDel(3)
+        CSCsymtabStat(3)
+        CSCsymtabEntryPut(3)
+        CSCsymtabEntryGet(3)
+        CSCsymtabEntryDel(3)

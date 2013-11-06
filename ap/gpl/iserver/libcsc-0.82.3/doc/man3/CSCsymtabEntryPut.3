@@ -1,0 +1,37 @@
+CSCsymtabEntryPut(3)
+
+NAME
+        CSCsymtabEntryPut - add a symbol to a libcsc symbol table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCsymtabEntryPut (
+                                CSCsymTableType   const symTab,
+                                CSCsymbolType*    const symbol
+                                );
+
+RETURN VALUE
+        CSCsymtabEntryPut(), if successful, returns CSC_OK; otherwise,
+        CSC_NOTFOUND, CSC_BADARG, and CSC_CORRUPT can be returned corresponding
+        to NULL pointers, bad function arguments, and internal data errors,
+        respectively.
+
+DESCRIPTION
+        CSCsymtabEntryPut() puts `symbol' into the symbol table specified by
+        `symTab'.
+
+        NOTE    Its best to put only symbols created by CSCsymbolFloatNew(),
+                CSCsymbolIntNew(), and CSCsymbolPtrNew() because the symbol
+                table delete functions expect the symbols to be created the
+                way these function do, with the name and value.pointer data
+                being dynamically allocated, and the valueFlag field being
+                correctly set.
+
+SEE ALSO
+        CSCsymtabNew(3)
+        CSCsymtabDel(3)
+        CSCsymtabStat(3)
+        CSCsymtabEntryGet(3)
+        CSCsymtabEntryDel(3)
+        CSCsymtabEntryNext(3)

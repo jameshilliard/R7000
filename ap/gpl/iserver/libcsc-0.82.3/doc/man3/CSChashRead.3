@@ -1,0 +1,40 @@
+CSChashRead(3)
+
+NAME
+        CSChashRead - read an ASCII format libcsc hash table
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSChashRead (
+                                int                       fd,
+                                CSChashTableType*   const hashTablePtr,
+                                CSCmonFnType              monFunc,
+                          const void*                     monData,
+                                CSCprofileType            profiling
+                          );
+
+RETURN VALUE
+        CSChashRead() always returns CSC_OK.  Lame.
+
+DESCRIPTION
+        CSChashRead() reads from `fd' a libcsc hash table in ASCII format that
+        was written with CSChashWrite().
+
+        `hashTablePtr' should point to a CSChashTableType that is set to NULL; a
+        new libcsc hash table will be created.
+
+BUGS
+        There is no error checking in this function.
+
+SEE ALSO
+        CSChashNew(3)
+        CSChashDel(3)
+        CSChashStat(3)
+        CSChashEntryPut(3)
+        CSChashEntryGet(3)
+        CSChashEntryDel(3)
+        CSChashEntryNext(3)
+        CSChashEntryStat(3)
+        CSChashWrite(3)
+        CSChashDump(3)

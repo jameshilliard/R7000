@@ -1,0 +1,42 @@
+CSCmemDone(3)
+
+NAME
+        CSCmemDone - cleanup and remove a memList (free all its memory)
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemDone (CSCmemListType const memList);
+
+RETURN VALUE
+        CSC_OK ......... successful
+
+        CSC_BADARG ..... memList is NULL
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemDone() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemDone() unconditionally remves all memory blocks contained in
+        `memList' and then removes `memList' itself. `memList' is not checked
+        for profiling; no statistics for `memList' are retained.
+
+        Do not try to use `memList' after calling CSCmemDone(), at least until
+        using `memList' in another CSCmemInit().
+
+        If CSCmemDone() is compiled with DEBUG, then the memory is shredded
+        by writing well-defined garbage to it before it is freed. This avoids
+        code that accidentally works by using deallocated memory that hasn't
+        yet changed.
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemFree(3)
+        CSCmemListFree(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

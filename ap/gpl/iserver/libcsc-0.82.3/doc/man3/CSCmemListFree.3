@@ -1,0 +1,51 @@
+CSCmemListFree(3)
+
+NAME
+        CSCmemListFree - free all memory allocated in a memList
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCmemListFree (
+                             CSCmemListType   const memList,
+                             int                    tagData
+                             );
+
+RETURN VALUE
+        CSC_OK ......... successful
+
+        CSC_NOTFOUND ... memList has no allocated blocks
+
+        CSC_BADARG ..... memList is NULL
+
+        CSC_CORRUPT .... corruption is detected in memList
+                         and CSCmemListFree() is compiled with DEBUG
+
+DESCRIPTION
+        CSCmemListFree() frees all the memory described by `memList'. This is
+        memory allocations for client code that was allocated by using `memList'
+        with functions like CSCmemAlloc(). The actual `memList' itself is not
+        freed.
+
+        CSCmemListFree() is a convenient mechanism to free many allocations of
+        memory with a single function.
+
+        `tagData' is provided for profiling `memList's. When profiling, the
+        `memList' continues to contain a record of the allocation and free of
+        the memory; the list doesn't really get smaller (the actual memory
+        allocations for client code are of course freed). `tagData' is an
+        arbitrary integer that the caller supplies for easier identification
+        when using CSCmemListPrintProfile() or CSCmemListWriteProfile() on the
+        `memList'.
+
+SEE ALSO
+        CSCmemInit(3)
+        CSCmemDone(3)
+        CSCmemAlloc(3)
+        CSCmemDup(3)
+        CSCmemFree(3)
+        CSCmemLookup(3)
+        CSCmemValidate(3)
+        CSCmemListStat(3)
+        CSCmemListPrintProfile(3)
+        CSCmemListWriteProfile(3)

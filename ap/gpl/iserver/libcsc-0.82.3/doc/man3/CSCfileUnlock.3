@@ -1,0 +1,39 @@
+CSCfileUnlock(3)
+
+NAME
+        CSCfileUnlock - unlock a region in a file
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int CSCfileUnlock (
+                          int     fd,
+                          off_t   offset,
+                          int     whence,
+                          off_t   length
+                          );
+
+RETURN VALUE
+        CSCfileUnlock() returns 0 if successful, otherwise -1 and errno will
+        be set to indicate the error.
+
+DESCRIPTION
+        CSCfileUnlock() unlocks a region of file associated with fd. The
+        unlocked region in the file is at offset from beginning/end of the
+        file depending upon the value of whence. The unlocked region is
+        length bytes.
+
+        whence usage is as follows:
+
+        SEEK_SET
+                The offset is set to offset bytes.
+
+        SEEK_CUR
+                The offset is set to its current location plus off-set bytes.
+
+        SEEK_END
+                The offset is set to the size of the file plus off-set bytes.
+
+SEE ALSO
+        CSCfileReadLock(3)
+        CSCfileWriteLock(3)

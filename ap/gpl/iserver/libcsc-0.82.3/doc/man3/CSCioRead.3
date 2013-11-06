@@ -1,0 +1,32 @@
+CSCioRead(3)
+
+NAME
+        CSCioRead - read a specific number of bytes
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCioRead (
+                        int            fd,
+                        char*    const bufPtr,
+                        size_t         size
+                        );
+
+RETURN VALUE
+        CSCioRead() returns the number of bytes read. On read error, zero is
+        returned. if `fd' is zero, `bufPtr' is NULL, or `size' is zero, then
+        -1 is returned.
+
+DESCRIPTION
+        CSCioRead() reads `size' bytes from `fd' into `bufPtr' by calling the
+        read() system call in a loop until `size' bytes is read, or until a
+        read error.
+
+SEE ALSO
+        CSCioInfoPrint(3)
+        CSCioWarnPrint(3)
+        CSCioErrorPrint(3)
+        CSCioSoftwareError(3)
+        CSCioReadLine(3)
+        CSCioBufWrite(3)
+        CSCioBufRead(3)

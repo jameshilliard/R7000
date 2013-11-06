@@ -1,0 +1,69 @@
+CSCbinTreeStat(3)
+
+NAME
+        CSCbinTreeStat - retrieve libcsc balanced binary tree statistics
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        int   CSCbinTreeStat (
+                             CSCbinTreeType   const tree,
+                             size_t*          const countPtr,
+                             size_t*          const heightPtr,
+                             size_t*          const comparesPtr,
+                             size_t*          const rotatesPtr
+                             );
+
+RETURN VALUE
+        CSCbinTreeStat() returns CSC_OK.
+
+        If libcsc was compiled with the DEBUG macro and tree is NULL, then
+        CSCbinTreeStat() returns CSC_BADARG.
+
+        If libcsc was compiled with the DEBUG macro and some internal tree data
+        is munged up, then CSCbinTreeStat() returns CSC_CORRUPT.
+
+DESCRIPTION
+        CSCbinTreeStat() retrieves these statistics from the libcsc balanced
+        binary tree `tree':
+
+                statistic
+                ---------
+                count ......... total number of nodes in the tree.
+                height ........ maximum current height of the tree.
+                compares ...... number of compares from most recent insert.
+                rotates ....... number of rotations from most recent insert.
+
+        If `countPtr' is not NULL, then the total number of nodes in the tree is
+        written to the size_t pointed to by `countPtr'.
+
+        If `heightPtr' is not NULL, then the maximum current height of the tree
+        is written to the size_t pointed to by `heightPtr'.
+
+        If `comparesPtr' is not NULL, then the number of compares from most
+        recent insert is written to the size_t pointed to by `comparesPtr'.
+
+        If `rotatesPtr' is not NULL, then the number of rotations from most
+        recent insert is written to the size_t pointed to by `rotatesPtr'.
+
+        If `countPtr', `heightPtr', `comparesPtr', and `rotatesPtr' are all
+        NULL, then this function does nothing interesting.
+
+SEE ALSO
+        CSCbinTreeNew(3)
+        CSCbinTreeDel(3)
+        CSCbinTreeInsert(3)
+        CSCbinTreeTagOrderedInsert(3)
+        CSCbinTreeTraverse(3)
+        CSCbinTreeUserSearch(3)
+        CSCbinTreeTagSearch(3)
+        CSCbinTreePrint(3)
+        CSCbinTreeNodeNew(3)
+        CSCbinTreeNodeDel(3)
+        CSCbinTreeNodeJoin(3)
+        CSCbinTreeNodeBreak(3)
+        CSCbinTreeNodeTraverse(3)
+        CSCbinTreeNodeUserSearch(3)
+        CSCbinTreeNodeTagSearch(3)
+        CSCbinTreeNodeStat(3)
+        CSCbinTreeNodePrint(3)

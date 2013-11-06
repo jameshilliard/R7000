@@ -1,0 +1,47 @@
+CSClistNodeNext(3)
+
+NAME
+        CSClistNodeNext - find next entry (node) in a libcsc list
+
+SYNOPSYS
+        #include "libcsc.h"
+
+        CSClistNodeType   CSClistNodeNext (
+                                          CSClistType       const list,
+                                          CSClistBiasType         bias,
+                                          CSClistNodeType         node
+                                          );
+
+RETURN VALUE
+        CSClistNodeNext(), if successful, returns an opaque libcsc list node.
+        If not successful, CSClistNodeNext() returns NULL.
+
+DESCRIPTION
+        CSClistNodeNext() uses the libcsc list referred to by the opaque `list'
+        and returns the next/previous consecutive entry following/preceding the
+        entry indicated by the opaque `node'.
+
+        `bias' specifies whether the next or previous node is retreievd.  Legal
+        values for `bias' are CSC_LIST_HEAD and CSC_LIST_TAIL.
+
+        If `node' is NULL, then the first item (head or tail depending upon the
+        value of `bias') in list is returned.
+
+        If `list' has no entries, or there are no more entries (nodes) following
+        `node', then NULL is returned.
+
+SEE ALSO
+        CSClistNew(3)
+        CSClistDel(3)
+        CSClistRead(3)
+        CSClistWrite(3)
+        CSClistSetCFunc(3)
+        CSClistStat(3)
+        CSClistPush(3)
+        CSClistPop(3)
+        CSClistPeek(3)
+        CSClistNodeFindByValue(3)
+        CSClistNodeFindByReference(3)
+        CSClistNodeStat(3)
+        CSClistNodeValidate(3)
+        CSClistNodeDel(3)
