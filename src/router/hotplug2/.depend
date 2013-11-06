@@ -1,7 +1,0 @@
-childlist.o: childlist.c mem_utils.h hotplug2.h childlist.h
-filemap_utils.o: filemap_utils.c filemap_utils.h
-hotplug2.o: hotplug2.c mem_utils.h hotplug2.h rules.h childlist.h
-hotplug2-dnode.o: hotplug2-dnode.c mem_utils.h hotplug2.h parser_utils.h
-mem_utils.o: mem_utils.c
-parser_utils.o: parser_utils.c mem_utils.h parser_utils.h
-rules.o: rules.c mem_utils.h hotplug2.h rules.h
